@@ -3,7 +3,7 @@
     /// <summary>
     /// Update Model
     /// </summary>
-    public class Update
+    public class UpdateModel
     {
         /// <summary>
         /// Gets or sets the coordinate1.

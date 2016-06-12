@@ -3,7 +3,7 @@
     /// <summary>
     /// Query Model
     /// </summary>
-    public class Query
+    public class QueryModel
     {
         /// <summary>
         /// Gets or sets the coordinate.

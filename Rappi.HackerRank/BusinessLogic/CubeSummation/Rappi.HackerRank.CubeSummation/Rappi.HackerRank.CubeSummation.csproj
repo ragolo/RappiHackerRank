@@ -39,24 +39,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cube3D\GenerateInputFormat.cs" />
+    <Compile Include="Cube3D\Interfaces\IGenerateInputFormat.cs" />
     <Compile Include="Cube3D\Models\CoordinateModel.cs" />
-    <Compile Include="Cube3D\Models\Input\InputFormat.cs" />
-    <Compile Include="Cube3D\Models\Input\Operations\Operation.cs" />
-    <Compile Include="Cube3D\Models\Input\Operations\Query.cs" />
-    <Compile Include="Cube3D\Models\Input\Operations\Update.cs" />
-    <Compile Include="Cube3D\Models\Input\TestCases.cs" />
+    <Compile Include="Cube3D\Models\Input\InputFormatModel.cs" />
+    <Compile Include="Cube3D\Models\Input\Operations\OperationModel.cs" />
+    <Compile Include="Cube3D\Models\Input\Operations\QueryModel.cs" />
+    <Compile Include="Cube3D\Models\Input\Operations\UpdateModel.cs" />
+    <Compile Include="Cube3D\Models\Input\TestCasesModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cube2D\" />
-    <Folder Include="Cube3D\Config\" />
     <Folder Include="Cube3D\Exceptions\" />
     <Folder Include="Cube3D\Helpers\" />
-    <Folder Include="Cube3D\Interfaces\" />
     <Folder Include="Cube3D\Requests\" />
     <Folder Include="Cube3D\Responses\" />
     <Folder Include="Cube3D\Validations\" />
     <Folder Include="Installer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cube3D\Config\App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

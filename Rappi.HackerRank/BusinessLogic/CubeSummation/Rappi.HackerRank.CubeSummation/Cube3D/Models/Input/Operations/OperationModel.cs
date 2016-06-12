@@ -3,7 +3,7 @@
     /// <summary>
     /// The operatinons
     /// </summary>
-    public class Operation
+    public class OperationModel
     {
         /// <summary>
         /// Gets or sets the query.
@@ -11,7 +11,7 @@
         /// <value>
         /// The query.
         /// </value>
-        public Query Query { get; set; }
+        public QueryModel Query { get; set; }
 
         /// <summary>
         /// Gets or sets the update.
@@ -19,6 +19,6 @@
         /// <value>
         /// The update.
         /// </value>
-        public Update Update { get; set; }
+        public UpdateModel Update { get; set; }
     }
 }

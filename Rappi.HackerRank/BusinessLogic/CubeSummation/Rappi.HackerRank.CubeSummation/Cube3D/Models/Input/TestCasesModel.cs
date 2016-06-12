@@ -5,7 +5,7 @@
     /// <summary>
     /// Test Cases
     /// </summary>
-    public class TestCases
+    public class TestCasesModel
     {
         /// <summary>
         /// Gets or sets the dimension of matrix.
@@ -26,6 +26,6 @@
         /// <summary>
         /// The operations
         /// </summary>
-        public Operation[] Operations;
+        public OperationModel[] Operations;
     }
 }

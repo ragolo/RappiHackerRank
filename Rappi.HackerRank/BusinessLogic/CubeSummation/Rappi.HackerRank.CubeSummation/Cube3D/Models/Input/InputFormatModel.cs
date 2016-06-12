@@ -3,7 +3,7 @@
     /// <summary>
     /// Input Format Model
     /// </summary>
-    public class InputFormat
+    public class InputFormatModel
     {
         /// <summary>
         /// Gets or sets the number of test case.
@@ -16,6 +16,6 @@
         /// <summary>
         /// The test caseses
         /// </summary>
-        public TestCases[] TestCases;
+        public TestCasesModel[] TestCases;
     }
 }
