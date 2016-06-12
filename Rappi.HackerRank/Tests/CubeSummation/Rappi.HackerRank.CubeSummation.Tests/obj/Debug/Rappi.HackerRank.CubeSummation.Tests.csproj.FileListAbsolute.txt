@@ -1,0 +1,9 @@
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\bin\Debug\Rappi.HackerRank.CubeSummation.Tests.dll
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\bin\Debug\Rappi.HackerRank.CubeSummation.Tests.pdb
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\bin\Debug\nunit.framework.dll
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\bin\Debug\Rappi.HackerRank.CubeSummation.dll
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\bin\Debug\Rappi.HackerRank.CubeSummation.pdb
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\bin\Debug\nunit.framework.xml
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\obj\Debug\Rappi.HackerRank.CubeSummation.Tests.csprojResolveAssemblyReference.cache
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\obj\Debug\Rappi.HackerRank.CubeSummation.Tests.dll
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\obj\Debug\Rappi.HackerRank.CubeSummation.Tests.pdb

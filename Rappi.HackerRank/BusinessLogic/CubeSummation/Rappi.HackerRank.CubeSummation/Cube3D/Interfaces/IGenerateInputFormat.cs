@@ -2,8 +2,12 @@
 {
     using Models.Input;
 
-    interface IGenerateInputFormat
+    public interface IGenerateInputFormat
     {
+        /// <summary>
+        /// Gets the input format.
+        /// </summary>
+        /// <returns></returns>
         InputFormatModel GetInputFormat();
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Models.Input
+﻿using System.Collections.Generic;
+
+namespace Rappi.HackerRank.CubeSummation.Cube3D.Models.Input
 {
     /// <summary>
     /// Input Format Model
@@ -16,6 +18,6 @@
         /// <summary>
         /// The test caseses
         /// </summary>
-        public TestCasesModel[] TestCases;
+        public List<TestCasesModel> TestCases = new List<TestCasesModel>();
     }
 }
