@@ -53,16 +53,20 @@
     <Compile Include="Cube3D\ConstAndEnumerations\AppSettingsConstants.cs" />
     <Compile Include="Cube3D\ConstAndEnumerations\CubeSummationExceptionType.cs" />
     <Compile Include="Cube3D\ConstAndEnumerations\InputFormatConstAndEnum.cs" />
+    <Compile Include="Cube3D\CubeSummationCube3D.cs" />
     <Compile Include="Cube3D\Exceptions\CubeSummationException.cs" />
     <Compile Include="Cube3D\GenerateInputFormatFromText.cs" />
     <Compile Include="Cube3D\Helpers\FileText.cs" />
+    <Compile Include="Cube3D\Interfaces\ICubeSummationCube3D.cs" />
     <Compile Include="Cube3D\Interfaces\IGenerateInputFormat.cs" />
+    <Compile Include="Cube3D\Interfaces\IGenerateInputFormatValidation.cs" />
     <Compile Include="Cube3D\Models\CoordinateModel.cs" />
     <Compile Include="Cube3D\Models\Input\InputFormatModel.cs" />
     <Compile Include="Cube3D\Models\Input\Operations\OperationModel.cs" />
     <Compile Include="Cube3D\Models\Input\Operations\QueryModel.cs" />
     <Compile Include="Cube3D\Models\Input\Operations\UpdateModel.cs" />
     <Compile Include="Cube3D\Models\Input\TestCasesModel.cs" />
+    <Compile Include="Cube3D\Validation\GenerateInputFormatValidation.cs" />
     <Compile Include="Installer\CubeSummationConfigurationSettings.cs" />
     <Compile Include="Installer\ProcessSettingsFactory.cs" />
     <Compile Include="Installer\WindsorInstaller.cs" />
@@ -73,7 +77,6 @@
     <Folder Include="Cube3D\Config\" />
     <Folder Include="Cube3D\Requests\" />
     <Folder Include="Cube3D\Responses\" />
-    <Folder Include="Cube3D\Validations\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
