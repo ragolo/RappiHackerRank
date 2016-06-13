@@ -15,6 +15,8 @@
         /// </summary>
         private readonly IGenerateInputFormatValidation generateInputFormatValidation;
 
+        private int[,,] cube3D;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CubeSummationCube3D"/> class.
         /// </summary>
@@ -29,10 +31,23 @@
         /// </summary>
         /// <param name="inputFormatModel">The input format model.</param>
         /// <returns></returns>
-        /// <exception cref="System.NotImplementedException"></exception>
         public List<int> GetSumTotalOfEachQueryOperation(InputFormatModel inputFormatModel)
         {
-            throw new System.NotImplementedException();
+            var result = new List<int>();
+            foreach (var testCase in inputFormatModel.TestCases)
+            {
+                this.cube3D = new int[testCase.DimensionOfMatrix, testCase.DimensionOfMatrix, testCase.DimensionOfMatrix];
+
+                foreach (var operation in testCase.Operations)
+                {
+                    operation.Excecute(this.cube3D);
+                    if (operation.AnyValueOfReturn)
+                    {
+                       result.Add(operation.Result); 
+                    }
+                }
+            }
+            return result;
         }
     }
 }

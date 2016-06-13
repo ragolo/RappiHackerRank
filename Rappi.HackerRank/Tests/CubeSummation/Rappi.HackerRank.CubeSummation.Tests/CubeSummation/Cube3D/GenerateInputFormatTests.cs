@@ -12,6 +12,7 @@
         public void ShloudBeGenerateInputFormat()
         {
             var inputFormat = this.generateInputFormat.GetInputFormat();
+            var result = this.cubeSummationCube3D.GetSumTotalOfEachQueryOperation(inputFormat);
         }
 
         [TearDown]

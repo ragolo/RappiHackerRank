@@ -1,5 +1,6 @@
 ﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Models.Input
 {
+    using Interfaces;
 
     /// <summary>
     /// Test Cases
@@ -25,6 +26,6 @@
         /// <summary>
         /// The operations
         /// </summary>
-        public object[] Operations;
+        public IOperation[] Operations;
     }
 }

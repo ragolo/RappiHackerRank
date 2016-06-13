@@ -1,6 +1,7 @@
 ﻿namespace Rappi.HackerRank.CubeSummation.Installer
 {
     using Cube3D.Helpers;
+    using Cube3D.Validation;
 
     /// <summary>
     /// Process Settings Factory
@@ -15,7 +16,8 @@
         {
             var settings = new CubeSummationConfigurationSettings()
             {
-                PathFile = FileText.GetPathFile()
+                PathFile = FileText.GetPathFile(),
+                GenerateInputFormatValidation = new GenerateInputFormatValidation()
             };
 
             return settings;

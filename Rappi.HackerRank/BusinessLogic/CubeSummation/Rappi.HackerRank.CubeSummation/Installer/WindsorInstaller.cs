@@ -50,7 +50,11 @@
                                 Component.For<IGenerateInputFormat>()
                     .ImplementedBy<GenerateInputFormatFromText>()
                     .DependsOn(Dependency.OnValue("pathFile", this.cubeSummationConfigurationSettings.PathFile))
-                    .Named("GenerateInputFormatFromText").LifeStyle.Is(this.defaultLifeStyleType)
+                    .Named("GenerateInputFormatFromText").LifeStyle.Is(this.defaultLifeStyleType),
+                    Component.For<ICubeSummationCube3D>()
+                    .ImplementedBy<CubeSummationCube3D>()
+                    .DependsOn(Dependency.OnValue("generateInputFormatValidation", this.cubeSummationConfigurationSettings.GenerateInputFormatValidation))
+                    .Named("CubeSummationCube3D").LifeStyle.Is(this.defaultLifeStyleType)
                 );
         }
     }

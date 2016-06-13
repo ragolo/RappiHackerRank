@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cube3D\Business\Operations\QueryBusiness.cs" />
+    <Compile Include="Cube3D\Business\Operations\UpdateBusiness.cs" />
     <Compile Include="Cube3D\ConstAndEnumerations\AppSettingsConstants.cs" />
     <Compile Include="Cube3D\ConstAndEnumerations\CubeSummationExceptionType.cs" />
     <Compile Include="Cube3D\ConstAndEnumerations\InputFormatConstAndEnum.cs" />
@@ -60,9 +62,9 @@
     <Compile Include="Cube3D\Interfaces\ICubeSummationCube3D.cs" />
     <Compile Include="Cube3D\Interfaces\IGenerateInputFormat.cs" />
     <Compile Include="Cube3D\Interfaces\IGenerateInputFormatValidation.cs" />
+    <Compile Include="Cube3D\Interfaces\IOperation.cs" />
     <Compile Include="Cube3D\Models\CoordinateModel.cs" />
     <Compile Include="Cube3D\Models\Input\InputFormatModel.cs" />
-    <Compile Include="Cube3D\Models\Input\Operations\OperationModel.cs" />
     <Compile Include="Cube3D\Models\Input\Operations\QueryModel.cs" />
     <Compile Include="Cube3D\Models\Input\Operations\UpdateModel.cs" />
     <Compile Include="Cube3D\Models\Input\TestCasesModel.cs" />

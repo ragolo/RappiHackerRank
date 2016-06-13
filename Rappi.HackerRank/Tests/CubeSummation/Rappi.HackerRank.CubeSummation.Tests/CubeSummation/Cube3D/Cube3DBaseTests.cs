@@ -14,6 +14,8 @@
         /// </summary>
         protected IGenerateInputFormat generateInputFormat;
 
+        protected ICubeSummationCube3D cubeSummationCube3D;
+
         [SetUp]
         protected virtual void SetUp()
         {
@@ -21,6 +23,7 @@
             {
                 var container = IocHelper.GetInstance();
                 this.generateInputFormat = (IGenerateInputFormat)container.Resolve("GenerateInputFormatFromText", typeof(GenerateInputFormatFromText));
+                this.cubeSummationCube3D = (ICubeSummationCube3D)container.Resolve("CubeSummationCube3D", typeof(CubeSummationCube3D));
             }
             catch (Exception exception)
             {

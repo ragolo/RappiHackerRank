@@ -1,5 +1,6 @@
 ﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Models.Input.Operations
 {
+
     /// <summary>
     /// Query Model
     /// </summary>
