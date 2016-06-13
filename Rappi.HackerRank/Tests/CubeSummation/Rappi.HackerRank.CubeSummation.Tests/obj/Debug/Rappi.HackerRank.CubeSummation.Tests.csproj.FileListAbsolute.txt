@@ -12,3 +12,5 @@ D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRa
 D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\bin\Debug\Castle.Windsor.dll
 D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\bin\Debug\Castle.Core.xml
 D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\bin\Debug\Castle.Windsor.xml
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\bin\Debug\Rappi.HackerRank.Core.IoC.dll
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\bin\Debug\Rappi.HackerRank.Core.IoC.pdb

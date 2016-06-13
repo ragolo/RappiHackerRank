@@ -30,6 +30,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CCDCBB
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{EAB4D9DA-4469-4A8D-A946-DCF3CDF12082}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rappi.HackerRank.Core.IoC", "Core\Rappi.HackerRank.Core.IoC\Rappi.HackerRank.Core.IoC.csproj", "{C8AB5ECF-258B-43B1-A45E-EFAA4E479710}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +52,10 @@ Global
 		{7CF4295F-2A10-4793-990A-603829BB28B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CF4295F-2A10-4793-990A-603829BB28B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CF4295F-2A10-4793-990A-603829BB28B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8AB5ECF-258B-43B1-A45E-EFAA4E479710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8AB5ECF-258B-43B1-A45E-EFAA4E479710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8AB5ECF-258B-43B1-A45E-EFAA4E479710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8AB5ECF-258B-43B1-A45E-EFAA4E479710}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +68,6 @@ Global
 		{77481981-03BA-4140-92DB-C420E828C501} = {51463F17-2C5A-43A2-941B-75AFBC712DEB}
 		{6F33BDE6-D491-480E-8FA4-896FED8A5528} = {4DF1718E-3201-47E6-BB49-436043E589AC}
 		{7CF4295F-2A10-4793-990A-603829BB28B0} = {7059B439-69F4-4794-B62F-B88F190A3F38}
+		{C8AB5ECF-258B-43B1-A45E-EFAA4E479710} = {EAB4D9DA-4469-4A8D-A946-DCF3CDF12082}
 	EndGlobalSection
 EndGlobal

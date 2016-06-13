@@ -1,7 +1,7 @@
 ﻿namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
 {
     using System;
-    using Castle.Windsor;
+    using Core.IoC;
     using NUnit.Framework;
     using HackerRank.CubeSummation.Cube3D.Interfaces;
     using HackerRank.CubeSummation.Cube3D;
@@ -19,7 +19,7 @@
         {
             try
             {
-                IWindsorContainer container = WindsorInstallerInstance.GetInstance();
+                var container = IocHelper.GetInstance();
                 this.generateInputFormat = (IGenerateInputFormat)container.Resolve("GenerateInputFormatFromText", typeof(GenerateInputFormatFromText));
             }
             catch (Exception exception)

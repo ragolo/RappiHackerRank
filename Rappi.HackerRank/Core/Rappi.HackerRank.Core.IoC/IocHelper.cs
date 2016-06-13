@@ -1,11 +1,11 @@
-﻿namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation
+﻿namespace Rappi.HackerRank.Core.IoC
 {
     using Castle.Windsor;
 
     /// <summary>
-    /// Windsor Installer Instance
+    /// Ioc Helper
     /// </summary>
-    public static class WindsorInstallerInstance
+    public static class IocHelper
     {
         /// <summary>
         /// The instance

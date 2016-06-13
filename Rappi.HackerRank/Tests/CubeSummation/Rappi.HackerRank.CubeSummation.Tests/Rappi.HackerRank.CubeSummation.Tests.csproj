@@ -67,7 +67,6 @@
   <ItemGroup>
     <Compile Include="CubeSummation\Cube3D\Cube3DBaseTests.cs" />
     <Compile Include="CubeSummation\Cube3D\GenerateInputFormatTests.cs" />
-    <Compile Include="CubeSummation\WindsorInstallerInstance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CubeSummation\CubeSummationSetUpFixture.cs" />
   </ItemGroup>
@@ -79,6 +78,10 @@
     <ProjectReference Include="..\..\..\BusinessLogic\CubeSummation\Rappi.HackerRank.CubeSummation\Rappi.HackerRank.CubeSummation.csproj">
       <Project>{6f33bde6-d491-480e-8fa4-896fed8a5528}</Project>
       <Name>Rappi.HackerRank.CubeSummation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Rappi.HackerRank.Core.IoC\Rappi.HackerRank.Core.IoC.csproj">
+      <Project>{c8ab5ecf-258b-43b1-a45e-efaa4e479710}</Project>
+      <Name>Rappi.HackerRank.Core.IoC</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

@@ -1,0 +1,9 @@
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Core\Rappi.HackerRank.Core.IoC\bin\Debug\Rappi.HackerRank.Core.IoC.dll
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Core\Rappi.HackerRank.Core.IoC\bin\Debug\Rappi.HackerRank.Core.IoC.pdb
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Core\Rappi.HackerRank.Core.IoC\bin\Debug\Castle.Core.dll
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Core\Rappi.HackerRank.Core.IoC\bin\Debug\Castle.Windsor.dll
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Core\Rappi.HackerRank.Core.IoC\bin\Debug\Castle.Core.xml
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Core\Rappi.HackerRank.Core.IoC\bin\Debug\Castle.Windsor.xml
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Core\Rappi.HackerRank.Core.IoC\obj\Debug\Rappi.HackerRank.Core.IoC.csprojResolveAssemblyReference.cache
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Core\Rappi.HackerRank.Core.IoC\obj\Debug\Rappi.HackerRank.Core.IoC.dll
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Core\Rappi.HackerRank.Core.IoC\obj\Debug\Rappi.HackerRank.Core.IoC.pdb
