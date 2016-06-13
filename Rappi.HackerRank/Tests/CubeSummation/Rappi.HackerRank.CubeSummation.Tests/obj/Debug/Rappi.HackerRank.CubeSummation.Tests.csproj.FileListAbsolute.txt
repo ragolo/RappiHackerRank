@@ -7,3 +7,8 @@ D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRa
 D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\obj\Debug\Rappi.HackerRank.CubeSummation.Tests.csprojResolveAssemblyReference.cache
 D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\obj\Debug\Rappi.HackerRank.CubeSummation.Tests.dll
 D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\obj\Debug\Rappi.HackerRank.CubeSummation.Tests.pdb
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\bin\Debug\Rappi.HackerRank.CubeSummation.Tests.dll.config
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\bin\Debug\Castle.Core.dll
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\bin\Debug\Castle.Windsor.dll
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\bin\Debug\Castle.Core.xml
+D:\Personal\Personal\Rappi\github\RappiHackerRank\RappiHackerRank\Rappi.HackerRank\Tests\CubeSummation\Rappi.HackerRank.CubeSummation.Tests\bin\Debug\Castle.Windsor.xml

@@ -1,7 +1,6 @@
 ﻿namespace Rappi.HackerRank.CubeSummation.Cube3D
 {
     using System;
-    using System.IO;
     using ConstAndEnumerations;
     using Interfaces;
     using Models;
@@ -11,26 +10,30 @@
     /// <summary>
     /// Generate Cube3D
     /// </summary>
-    public class GenerateInputFormat : IGenerateInputFormat
+    public class GenerateInputFormatFromText : IGenerateInputFormat
     {
+        /// <summary>
+        /// The path file
+        /// </summary>
+        private readonly string pathFile;
+
+        public GenerateInputFormatFromText(string pathFile)
+        {
+            this.pathFile = pathFile;
+        }
+
         /// <summary>
         /// Gets the input format.
         /// </summary>
         /// <returns></returns>
         public InputFormatModel GetInputFormat()
         {
-            var file = @"C:\CubeSummation3D\input00.txt";
+            var lines = Helpers.FileText.GetAllLinesOfFile(this.pathFile);
             var inputFormatModel = new InputFormatModel();
 
-            if (File.Exists(file))
-            {
-                var lines = File.ReadAllLines(file);
-
-                SetNumberOfTestCase(inputFormatModel, lines);
-                SetTestCases(inputFormatModel, lines);
-                SetOperations(inputFormatModel, lines);
-            }
-
+            SetNumberOfTestCase(inputFormatModel, lines);
+            SetTestCases(inputFormatModel, lines);
+            SetOperations(inputFormatModel, lines);
             return inputFormatModel;
         }
 

@@ -1,24 +1,13 @@
-﻿namespace Rappi.HackerRank.CubeSummation.Tests.Cube3D
+﻿namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
 {
     using NUnit.Framework;
-    using CubeSummation.Cube3D;
-    using CubeSummation.Cube3D.Interfaces;
 
     /// <summary>
     /// Summary description for GenerateInputFormatTests
     /// </summary>
     [TestFixture]
-    public class GenerateInputFormatTests
+    public class GenerateInputFormatTests : Cube3DBaseTests
     {
-
-        private IGenerateInputFormat generateInputFormat;
-
-        [SetUp]
-        public void SetUp()
-        {
-            this.generateInputFormat = new GenerateInputFormat();
-        }
-
         [Test]
         public void ShloudBeGenerateInputFormat()
         {
