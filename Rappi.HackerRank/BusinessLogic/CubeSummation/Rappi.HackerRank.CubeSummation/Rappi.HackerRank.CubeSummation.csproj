@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cube3D\ConstAndEnumerations\InputFormatConstAndEnum.cs" />
     <Compile Include="Cube3D\GenerateInputFormat.cs" />
     <Compile Include="Cube3D\Interfaces\IGenerateInputFormat.cs" />
     <Compile Include="Cube3D\Models\CoordinateModel.cs" />

@@ -22,7 +22,7 @@
         [Test]
         public void ShloudBeGenerateInputFormat()
         {
-            this.generateInputFormat.GetInputFormat();
+            var inputFormat = this.generateInputFormat.GetInputFormat();
         }
 
         [TearDown]

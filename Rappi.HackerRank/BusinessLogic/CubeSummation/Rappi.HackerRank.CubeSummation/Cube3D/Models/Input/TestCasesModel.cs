@@ -1,7 +1,5 @@
 ﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Models.Input
 {
-    using System.Collections.Generic;
-    using Operations;
 
     /// <summary>
     /// Test Cases
@@ -27,6 +25,6 @@
         /// <summary>
         /// The operations
         /// </summary>
-        public List<OperationModel> Operations = new List<OperationModel>();
+        public object[] Operations;
     }
 }

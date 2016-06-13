@@ -11,7 +11,7 @@
         /// <value>
         /// The coordinate.
         /// </value>
-        CoordinateModel Coordinate1 { get; set; }
+        public CoordinateModel Coordinate1 { get; set; }
 
         /// <summary>
         /// Gets or sets the coordinate2.
@@ -19,6 +19,6 @@
         /// <value>
         /// The coordinate2.
         /// </value>
-        CoordinateModel Coordinate2 { get; set; }
+        public CoordinateModel Coordinate2 { get; set; }
     }
 }
