@@ -1,0 +1,14 @@
+_ReSharper*/
+obj/
+bin/
+Debug/
+Release/
+packages/
+*.suo
+*.user
+*.orig
+bin/[Rr]elease/evointernal.dll
+bin/[Dd]ebug/evointernal.dll
+bin/evointernal.dll
+.Publish.xml
+StyleCop.Cache	

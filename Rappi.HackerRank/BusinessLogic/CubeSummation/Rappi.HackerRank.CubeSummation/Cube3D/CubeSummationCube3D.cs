@@ -1,4 +1,6 @@
-﻿namespace Rappi.HackerRank.CubeSummation.Cube3D
+﻿using Rappi.HackerRank.CubeSummation.Cube3D.ConstAndEnumerations;
+
+namespace Rappi.HackerRank.CubeSummation.Cube3D
 {
     using System.Collections.Generic;
     using Models.Input;
@@ -36,6 +38,8 @@
             var result = new List<int>();
             foreach (var testCase in inputFormatModel.TestCases)
             {
+                testCase.DimensionOfMatrix += CubeSummationCube3DConstAndEnum.IntializeToFirstBlock;
+
                 this.cube3D = new int[testCase.DimensionOfMatrix, testCase.DimensionOfMatrix, testCase.DimensionOfMatrix];
 
                 foreach (var operation in testCase.Operations)

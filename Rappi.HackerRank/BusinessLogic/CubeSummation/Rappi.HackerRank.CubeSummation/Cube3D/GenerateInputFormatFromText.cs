@@ -20,24 +20,12 @@ namespace Rappi.HackerRank.CubeSummation.Cube3D
         private readonly string pathFile;
 
         /// <summary>
-        /// The query business
-        /// </summary>
-        private QueryBusiness queryBusiness;
-
-        /// <summary>
-        /// The update business
-        /// </summary>
-        private UpdateBusiness updateBusiness;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="GenerateInputFormatFromText"/> class.
         /// </summary>
         /// <param name="pathFile">The path file.</param>
         public GenerateInputFormatFromText(string pathFile)
         {
             this.pathFile = pathFile;
-            this.queryBusiness = new QueryBusiness();
-            this.updateBusiness  = new UpdateBusiness();
         }
 
         /// <summary>
@@ -107,17 +95,20 @@ namespace Rappi.HackerRank.CubeSummation.Cube3D
 
                 while (numberOfOperations > 0)
                 {
+
                     if (lines[currentPositionOfOperation].StartsWith(InputFormatConstAndEnum.OperatonUpdateStartWith))
                     {
-                        this.updateBusiness.UpdateModels = GetUpdateModelsToOperationModel(lines, currentPositionOfOperation);
-                        inputFormatModel.TestCases[positionTestCase].Operations[indexPositionOfOperation] = this.updateBusiness;
+                        var updateBusiness = new UpdateBusiness();
+                        updateBusiness.UpdateModels = GetUpdateModelsToOperationModel(lines, currentPositionOfOperation);
+                        inputFormatModel.TestCases[positionTestCase].Operations[indexPositionOfOperation] = updateBusiness;
                     }
-                    else 
-                    if (lines[currentPositionOfOperation].StartsWith(InputFormatConstAndEnum.OperationQueryStartWith))
-                    {
-                        this.queryBusiness.QueryModels = GetQueryModelsToOperationModel(lines, currentPositionOfOperation);
-                        inputFormatModel.TestCases[positionTestCase].Operations[indexPositionOfOperation] = this.queryBusiness;
-                    }
+                    else
+                        if (lines[currentPositionOfOperation].StartsWith(InputFormatConstAndEnum.OperationQueryStartWith))
+                        {
+                            var queryBusiness = new QueryBusiness();
+                            queryBusiness.QueryModels = GetQueryModelsToOperationModel(lines, currentPositionOfOperation);
+                            inputFormatModel.TestCases[positionTestCase].Operations[indexPositionOfOperation] = queryBusiness;
+                        }
 
                     currentPositionOfOperation += 1;
                     numberOfOperations -= 1;
