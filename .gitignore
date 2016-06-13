@@ -12,3 +12,28 @@ bin/[Dd]ebug/evointernal.dll
 bin/evointernal.dll
 .Publish.xml
 StyleCop.Cache	
+
+#ignore thumbnails created by windows
+Thumbs.db
+#Ignore files build by Visual Studio
+*.obj
+*.exe
+*.pdb
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+[Rr]elease*/
+[Tt]est[Rr]esult*
