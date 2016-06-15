@@ -19,7 +19,7 @@
         /// </summary>
         public CubeSummationException(): base()
         {
-            this.Type = CubeSummationExceptionType.Generic;
+            Type = CubeSummationExceptionType.Generic;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         public CubeSummationException(string message)
             : base(message)
         {
-            this.Type = CubeSummationExceptionType.Generic;
+            Type = CubeSummationExceptionType.Generic;
         }
 
         /// <summary>
@@ -40,7 +40,7 @@
         public CubeSummationException(string message, CubeSummationException innerException)
             : base(message, innerException)
         {
-            this.Type = innerException.Type;
+            Type = innerException.Type;
         }
 
         /// <summary>
@@ -52,7 +52,7 @@
         public CubeSummationException(CubeSummationExceptionType type, string message, Exception inner)
             : base(message, inner)
         {
-            this.Type = type;
+            Type = type;
         }
 
         /// <summary>
@@ -63,7 +63,7 @@
         public CubeSummationException(CubeSummationExceptionType cubeSummationExceptionType, string message)
             : base(message)
         {
-            this.Type = cubeSummationExceptionType;
+            Type = cubeSummationExceptionType;
         }
     }
 }

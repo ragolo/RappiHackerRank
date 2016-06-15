@@ -18,6 +18,11 @@
         /// <summary>
         /// The file
         /// </summary>
-        File
+        File,
+
+        /// <summary>
+        /// The application settings
+        /// </summary>
+        AppSettings
     }
 }

@@ -4,7 +4,7 @@
     using Interfaces;
 
     /// <summary>
-    /// 
+    /// The Generate Cube
     /// </summary>
     /// <seealso cref="Rappi.HackerRank.CubeSummation.Cube3D.Business.Interfaces.IGenerateCube" />
     public class GenerateCube : IGenerateCube

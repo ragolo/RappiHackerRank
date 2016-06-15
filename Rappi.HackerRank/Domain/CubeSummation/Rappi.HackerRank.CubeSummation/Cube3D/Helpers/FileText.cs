@@ -1,7 +1,6 @@
 ﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Helpers
 {
     using System;
-    using System.Configuration;
     using System.IO;
     using ConstAndEnumerations;
     using Exceptions;
@@ -29,21 +28,6 @@
             {
                 throw new CubeSummationException(CubeSummationExceptionType.File, ex.Message);
             }
-        }
-
-        /// <summary>
-        /// Gets the path file.
-        /// </summary>
-        /// <returns></returns>
-        /// <exception cref="System.ArgumentNullException"></exception>
-        public static string GetPathFile()
-        {
-            var pathFile = ConfigurationManager.AppSettings[AppSettingsConstants.PathFile];
-            if (pathFile == null)
-            {
-                throw new ArgumentNullException(AppSettingsConstants.PathFile);
-            }
-            return pathFile;
         }
     }
 }

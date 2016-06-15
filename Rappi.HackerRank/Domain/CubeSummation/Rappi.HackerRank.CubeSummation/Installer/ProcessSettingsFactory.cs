@@ -1,4 +1,5 @@
 ﻿using Rappi.HackerRank.CubeSummation.Cube3D.Business;
+using Rappi.HackerRank.CubeSummation.Cube3D.Models;
 
 namespace Rappi.HackerRank.CubeSummation.Installer
 {
@@ -18,8 +19,11 @@ namespace Rappi.HackerRank.CubeSummation.Installer
         {
             var settings = new CubeSummationConfigurationSettings()
             {
-                PathFile = FileText.GetPathFile(),
-                GenerateInputFormatValidation = new GenerateInputFormatValidation(),
+                PathFile = ConfigurationManagerAppConfig.GetPathFile(),
+                GenerateInputFormatValidation = new GenerateInputFormatValidation(new ValidationModel
+                {
+                    DimensionOfMatrix = ConfigurationManagerAppConfig.GetDimensionOfMatrix()
+                }),
                 GenerateCube = new GenerateCube()
             };
 

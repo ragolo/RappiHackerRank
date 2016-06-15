@@ -38,9 +38,9 @@
             try
             {
                 var container = IocHelper.GetInstance();
-                this.generateInputFormat = (IGenerateInputFormat)container.Resolve("GenerateInputFormatFromText", typeof(GenerateInputFormatFromText));
-                this.cubeSummationCube3D = (ICubeSummationCube3D)container.Resolve("CubeSummationCube3D", typeof(CubeSummationCube3D));
-                this.generateCube = (IGenerateCube)container.Resolve("GenerateCube", typeof(GenerateCube));
+                generateInputFormat = (IGenerateInputFormat)container.Resolve("GenerateInputFormatFromText", typeof(GenerateInputFormatFromText));
+                cubeSummationCube3D = (ICubeSummationCube3D)container.Resolve("CubeSummationCube3D", typeof(CubeSummationCube3D));
+                generateCube = (IGenerateCube)container.Resolve("GenerateCube", typeof(GenerateCube));
             }
             catch (Exception exception)
             {

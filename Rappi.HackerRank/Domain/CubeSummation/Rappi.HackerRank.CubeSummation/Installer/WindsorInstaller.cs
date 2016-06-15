@@ -37,7 +37,7 @@ namespace Rappi.HackerRank.CubeSummation.Installer
         /// <param name="cubeSummationConfigurationSettings">The cube summation configuration settings.</param>
         public WindsorInstaller(IWindsorContainer container, LifestyleType defaultLifeStyleType, CubeSummationConfigurationSettings cubeSummationConfigurationSettings)
         {
-            this.baseContainer = container;
+            baseContainer = container;
             this.defaultLifeStyleType = defaultLifeStyleType;
             this.cubeSummationConfigurationSettings = cubeSummationConfigurationSettings;
         }
@@ -49,18 +49,18 @@ namespace Rappi.HackerRank.CubeSummation.Installer
         /// <param name="store">The configuration store.</param>
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            this.baseContainer.Register(
+            baseContainer.Register(
                                 Component.For<IGenerateInputFormat>()
                     .ImplementedBy<GenerateInputFormatFromText>()
-                    .DependsOn(Dependency.OnValue("pathFile", this.cubeSummationConfigurationSettings.PathFile))
-                    .Named("GenerateInputFormatFromText").LifeStyle.Is(this.defaultLifeStyleType),
+                    .DependsOn(Dependency.OnValue("pathFile", cubeSummationConfigurationSettings.PathFile))
+                    .Named("GenerateInputFormatFromText").LifeStyle.Is(defaultLifeStyleType),
                     Component.For<ICubeSummationCube3D>()
                     .ImplementedBy<CubeSummationCube3D>()
-                    .DependsOn(Dependency.OnValue("generateInputFormatValidation", this.cubeSummationConfigurationSettings.GenerateInputFormatValidation))
-                    .Named("CubeSummationCube3D").LifeStyle.Is(this.defaultLifeStyleType),
+                    .DependsOn(Dependency.OnValue("generateInputFormatValidation", cubeSummationConfigurationSettings.GenerateInputFormatValidation))
+                    .Named("CubeSummationCube3D").LifeStyle.Is(defaultLifeStyleType),
                     Component.For<IGenerateCube>()
                     .ImplementedBy<GenerateCube>()
-                    .Named("GenerateCube").LifeStyle.Is(this.defaultLifeStyleType)
+                    .Named("GenerateCube").LifeStyle.Is(defaultLifeStyleType)
                 );
         }
     }

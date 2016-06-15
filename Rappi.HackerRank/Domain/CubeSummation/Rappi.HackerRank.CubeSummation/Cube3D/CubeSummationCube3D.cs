@@ -1,4 +1,8 @@
-﻿namespace Rappi.HackerRank.CubeSummation.Cube3D
+﻿using System;
+using Rappi.HackerRank.CubeSummation.Cube3D.ConstAndEnumerations;
+using Rappi.HackerRank.CubeSummation.Cube3D.Exceptions;
+
+namespace Rappi.HackerRank.CubeSummation.Cube3D
 {
     using System.Collections.Generic;
     using Business.Interfaces;
@@ -43,21 +47,36 @@
         /// <returns></returns>
         public List<int> GetSumTotalOfEachQueryOperation(InputFormatModel inputFormatModel)
         {
-            var result = new List<int>();
-            foreach (var testCase in inputFormatModel.TestCases)
+            try
             {
-                this.cube3D = generateCube.GetCube3D(testCase.DimensionOfMatrix);
-
-                foreach (var operation in testCase.Operations)
+                var result = new List<int>();
+                if (generateInputFormatValidation.IsAllValidate(inputFormatModel))
                 {
-                    operation.Excecute(this.cube3D);
-                    if (operation.AnyValueOfReturn)
+                    foreach (var testCase in inputFormatModel.TestCases)
                     {
-                        result.Add(operation.Result);
+                        cube3D = generateCube.GetCube3D(testCase.DimensionOfMatrix);
+
+                        foreach (var operation in testCase.Operations)
+                        {
+                            operation.Excecute(cube3D);
+                            if (operation.AnyValueOfReturn)
+                            {
+                                result.Add(operation.Result);
+                            }
+                        }
                     }
                 }
+                return result;
             }
-            return result;
+            catch (CubeSummationException ex)
+            {
+                throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new CubeSummationException(CubeSummationExceptionType.Generic, ex.Message);
+            }
         }
     }
 }

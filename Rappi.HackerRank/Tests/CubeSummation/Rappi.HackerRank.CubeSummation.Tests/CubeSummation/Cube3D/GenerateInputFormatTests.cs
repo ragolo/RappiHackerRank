@@ -1,4 +1,7 @@
-﻿namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
+﻿using System.Collections.Generic;
+using Rappi.HackerRank.CubeSummation.Cube3D.Models.Input;
+
+namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
 {
     using NUnit.Framework;
 
