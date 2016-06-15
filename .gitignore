@@ -37,3 +37,7 @@ Thumbs.db
 *.sbr
 [Rr]elease*/
 [Tt]est[Rr]esult*
+Rappi.HackerRank/BusinessLogic/CubeSummation/Rappi.HackerRank.CubeSummation/obj
+Rappi.HackerRank/BusinessLogic/CubeSummation/Rappi.HackerRank.CubeSummation/obj
+Rappi.HackerRank/Tests/CubeSummation/Rappi.HackerRank.CubeSummation.Tests/obj
+Rappi.HackerRank/Tests/CubeSummation/Rappi.HackerRank.CubeSummation.Tests/obj

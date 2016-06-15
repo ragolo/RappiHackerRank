@@ -1,6 +1,6 @@
 ﻿namespace Rappi.HackerRank.CubeSummation.Installer
 {
-    using Cube3D.Validation;
+    using Cube3D.Business.Validation;
 
     /// <summary>
     /// Cube3D Configuration Settings

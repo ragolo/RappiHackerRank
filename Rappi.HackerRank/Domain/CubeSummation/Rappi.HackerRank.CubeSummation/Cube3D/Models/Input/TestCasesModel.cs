@@ -1,6 +1,6 @@
 ﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Models.Input
 {
-    using Interfaces;
+    using Business.Interfaces;
 
     /// <summary>
     /// Test Cases

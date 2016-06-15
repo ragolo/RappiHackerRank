@@ -1,13 +1,13 @@
-﻿using Rappi.HackerRank.CubeSummation.Cube3D.Business.Operations;
-
-namespace Rappi.HackerRank.CubeSummation.Cube3D
+﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Business
 {
     using System;
     using ConstAndEnumerations;
+    using Helpers;
     using Interfaces;
     using Models;
     using Models.Input;
     using Models.Input.Operations;
+    using Operations;
 
     /// <summary>
     /// Generate Cube3D
@@ -34,7 +34,7 @@ namespace Rappi.HackerRank.CubeSummation.Cube3D
         /// <returns></returns>
         public InputFormatModel GetInputFormat()
         {
-            var lines = Helpers.FileText.GetAllLinesOfFile(this.pathFile);
+            var lines = FileText.GetAllLinesOfFile(pathFile);
             var inputFormatModel = new InputFormatModel();
 
             SetNumberOfTestCase(inputFormatModel, lines);

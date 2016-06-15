@@ -75,13 +75,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\BusinessLogic\CubeSummation\Rappi.HackerRank.CubeSummation\Rappi.HackerRank.CubeSummation.csproj">
-      <Project>{6f33bde6-d491-480e-8fa4-896fed8a5528}</Project>
-      <Name>Rappi.HackerRank.CubeSummation</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\Core\Rappi.HackerRank.Core.IoC\Rappi.HackerRank.Core.IoC.csproj">
       <Project>{c8ab5ecf-258b-43b1-a45e-efaa4e479710}</Project>
       <Name>Rappi.HackerRank.Core.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Domain\CubeSummation\Rappi.HackerRank.CubeSummation\Rappi.HackerRank.CubeSummation.csproj">
+      <Project>{6F33BDE6-D491-480E-8FA4-896FED8A5528}</Project>
+      <Name>Rappi.HackerRank.CubeSummation</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

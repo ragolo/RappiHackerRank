@@ -1,4 +1,7 @@
-﻿namespace Rappi.HackerRank.CubeSummation.Installer
+﻿using Rappi.HackerRank.CubeSummation.Cube3D.Business;
+using Rappi.HackerRank.CubeSummation.Cube3D.Business.Interfaces;
+
+namespace Rappi.HackerRank.CubeSummation.Installer
 {
     using Castle.Core;
     using Castle.MicroKernel.Registration;

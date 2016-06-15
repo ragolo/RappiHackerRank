@@ -1,4 +1,7 @@
-﻿namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
+﻿using Rappi.HackerRank.CubeSummation.Cube3D.Business;
+using Rappi.HackerRank.CubeSummation.Cube3D.Business.Interfaces;
+
+namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
 {
     using System;
     using Core.IoC;

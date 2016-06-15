@@ -1,4 +1,4 @@
-﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Interfaces
+﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Business.Interfaces
 {
     /// <summary>
     /// IOperation
