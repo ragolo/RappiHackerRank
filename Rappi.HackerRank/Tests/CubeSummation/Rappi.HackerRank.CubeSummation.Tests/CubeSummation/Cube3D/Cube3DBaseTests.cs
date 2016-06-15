@@ -1,14 +1,16 @@
-﻿using Rappi.HackerRank.CubeSummation.Cube3D.Business;
-using Rappi.HackerRank.CubeSummation.Cube3D.Business.Interfaces;
-
-namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
+﻿namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
 {
     using System;
     using Core.IoC;
-    using NUnit.Framework;
-    using HackerRank.CubeSummation.Cube3D.Interfaces;
     using HackerRank.CubeSummation.Cube3D;
+    using HackerRank.CubeSummation.Cube3D.Business;
+    using HackerRank.CubeSummation.Cube3D.Business.Interfaces;
+    using HackerRank.CubeSummation.Cube3D.Interfaces;
+    using NUnit.Framework;
 
+    /// <summary>
+    /// Cube3D Base Tests
+    /// </summary>
     public class Cube3DBaseTests
     {
 
@@ -17,8 +19,19 @@ namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
         /// </summary>
         protected IGenerateInputFormat generateInputFormat;
 
+        /// <summary>
+        /// The cube summation cube3 d
+        /// </summary>
         protected ICubeSummationCube3D cubeSummationCube3D;
 
+        /// <summary>
+        /// The generate cube
+        /// </summary>
+        protected IGenerateCube generateCube;
+
+        /// <summary>
+        /// Sets up.
+        /// </summary>
         [SetUp]
         protected virtual void SetUp()
         {
@@ -27,6 +40,7 @@ namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
                 var container = IocHelper.GetInstance();
                 this.generateInputFormat = (IGenerateInputFormat)container.Resolve("GenerateInputFormatFromText", typeof(GenerateInputFormatFromText));
                 this.cubeSummationCube3D = (ICubeSummationCube3D)container.Resolve("CubeSummationCube3D", typeof(CubeSummationCube3D));
+                this.generateCube = (IGenerateCube)container.Resolve("GenerateCube", typeof(GenerateCube));
             }
             catch (Exception exception)
             {

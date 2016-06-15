@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cube3D\Business\GenerateCube.cs" />
+    <Compile Include="Cube3D\Business\Interfaces\IGenerateCube.cs" />
     <Compile Include="Cube3D\Business\Operations\QueryBusiness.cs" />
     <Compile Include="Cube3D\Business\Operations\UpdateBusiness.cs" />
     <Compile Include="Cube3D\ConstAndEnumerations\AppSettingsConstants.cs" />

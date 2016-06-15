@@ -1,6 +1,7 @@
 ﻿namespace Rappi.HackerRank.CubeSummation.Installer
 {
     using Cube3D.Business.Validation;
+    using Cube3D.Business;
 
     /// <summary>
     /// Cube3D Configuration Settings
@@ -22,5 +23,13 @@
         /// The generate input format validation.
         /// </value>
         public GenerateInputFormatValidation GenerateInputFormatValidation { get; set; }
+
+        /// <summary>
+        /// Gets or sets the generate cube.
+        /// </summary>
+        /// <value>
+        /// The generate cube.
+        /// </value>
+        public GenerateCube GenerateCube { get; set; }
     }
 }

@@ -1,12 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Rappi.HackerRank.CubeSummation.Cube3D.Business
+﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Business
 {
-    class GenerateCube
+    using ConstAndEnumerations;
+    using Interfaces;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="Rappi.HackerRank.CubeSummation.Cube3D.Business.Interfaces.IGenerateCube" />
+    public class GenerateCube : IGenerateCube
     {
+        /// <summary>
+        /// Gets the cube3 d.
+        /// </summary>
+        /// <param name="dimensionOfMatrix">The dimension of matrix.</param>
+        /// <returns>The cube of 3 dimensions</returns>
+        public int[, ,] GetCube3D(int dimensionOfMatrix)
+        {
+            dimensionOfMatrix += CubeSummationCube3DConstAndEnum.IntializeToFirstBlock;
+            var cube3D = new int[dimensionOfMatrix, dimensionOfMatrix, dimensionOfMatrix];
+            return cube3D;
+        }
     }
 }

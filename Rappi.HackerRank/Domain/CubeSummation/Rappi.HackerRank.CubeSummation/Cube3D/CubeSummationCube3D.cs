@@ -1,11 +1,9 @@
-﻿using Rappi.HackerRank.CubeSummation.Cube3D.Business.Interfaces;
-using Rappi.HackerRank.CubeSummation.Cube3D.ConstAndEnumerations;
-
-namespace Rappi.HackerRank.CubeSummation.Cube3D
+﻿namespace Rappi.HackerRank.CubeSummation.Cube3D
 {
     using System.Collections.Generic;
-    using Models.Input;
+    using Business.Interfaces;
     using Interfaces;
+    using Models.Input;
 
     /// <summary>
     /// Cube Summation Cube3D
@@ -18,15 +16,24 @@ namespace Rappi.HackerRank.CubeSummation.Cube3D
         /// </summary>
         private readonly IGenerateInputFormatValidation generateInputFormatValidation;
 
-        private int[,,] cube3D;
+        /// <summary>
+        /// The generate cube
+        /// </summary>
+        private readonly IGenerateCube generateCube;
+
+        /// <summary>
+        /// The cube3 d
+        /// </summary>
+        private int[, ,] cube3D;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CubeSummationCube3D"/> class.
         /// </summary>
         /// <param name="generateInputFormatValidation">The generate input format validation.</param>
-        public CubeSummationCube3D(IGenerateInputFormatValidation generateInputFormatValidation)
+        public CubeSummationCube3D(IGenerateInputFormatValidation generateInputFormatValidation, IGenerateCube generateCube)
         {
             this.generateInputFormatValidation = generateInputFormatValidation;
+            this.generateCube = generateCube;
         }
 
         /// <summary>
@@ -39,16 +46,14 @@ namespace Rappi.HackerRank.CubeSummation.Cube3D
             var result = new List<int>();
             foreach (var testCase in inputFormatModel.TestCases)
             {
-                testCase.DimensionOfMatrix += CubeSummationCube3DConstAndEnum.IntializeToFirstBlock;
-
-                this.cube3D = new int[testCase.DimensionOfMatrix, testCase.DimensionOfMatrix, testCase.DimensionOfMatrix];
+                this.cube3D = generateCube.GetCube3D(testCase.DimensionOfMatrix);
 
                 foreach (var operation in testCase.Operations)
                 {
                     operation.Excecute(this.cube3D);
                     if (operation.AnyValueOfReturn)
                     {
-                       result.Add(operation.Result); 
+                        result.Add(operation.Result);
                     }
                 }
             }

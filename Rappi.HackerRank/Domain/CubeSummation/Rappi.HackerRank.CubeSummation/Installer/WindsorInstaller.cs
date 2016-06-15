@@ -57,7 +57,10 @@ namespace Rappi.HackerRank.CubeSummation.Installer
                     Component.For<ICubeSummationCube3D>()
                     .ImplementedBy<CubeSummationCube3D>()
                     .DependsOn(Dependency.OnValue("generateInputFormatValidation", this.cubeSummationConfigurationSettings.GenerateInputFormatValidation))
-                    .Named("CubeSummationCube3D").LifeStyle.Is(this.defaultLifeStyleType)
+                    .Named("CubeSummationCube3D").LifeStyle.Is(this.defaultLifeStyleType),
+                    Component.For<IGenerateCube>()
+                    .ImplementedBy<GenerateCube>()
+                    .Named("GenerateCube").LifeStyle.Is(this.defaultLifeStyleType)
                 );
         }
     }
