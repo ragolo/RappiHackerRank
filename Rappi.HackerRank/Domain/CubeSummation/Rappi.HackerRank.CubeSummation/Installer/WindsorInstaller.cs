@@ -1,5 +1,6 @@
 ﻿using Rappi.HackerRank.CubeSummation.Cube3D.Business;
 using Rappi.HackerRank.CubeSummation.Cube3D.Business.Interfaces;
+using Rappi.HackerRank.CubeSummation.Cube3D.Business.Validation;
 
 namespace Rappi.HackerRank.CubeSummation.Installer
 {
@@ -50,7 +51,11 @@ namespace Rappi.HackerRank.CubeSummation.Installer
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             baseContainer.Register(
-                                Component.For<IGenerateInputFormat>()
+                    Component.For<IGenerateInputFormatValidation>()
+                    .ImplementedBy<GenerateInputFormatValidation>()
+                    .DependsOn(Dependency.OnValue("validationModel", cubeSummationConfigurationSettings.ValidationModel))
+                    .Named("GenerateInputFormatValidation").LifeStyle.Is(defaultLifeStyleType),
+                    Component.For<IGenerateInputFormat>()
                     .ImplementedBy<GenerateInputFormatFromText>()
                     .DependsOn(Dependency.OnValue("pathFile", cubeSummationConfigurationSettings.PathFile))
                     .Named("GenerateInputFormatFromText").LifeStyle.Is(defaultLifeStyleType),
@@ -61,6 +66,8 @@ namespace Rappi.HackerRank.CubeSummation.Installer
                     Component.For<IGenerateCube>()
                     .ImplementedBy<GenerateCube>()
                     .Named("GenerateCube").LifeStyle.Is(defaultLifeStyleType)
+
+                    
                 );
         }
     }

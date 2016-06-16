@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using Rappi.HackerRank.CubeSummation.Cube3D.Models.Input;
-
-namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
+﻿namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
 {
+    using System.Collections.Generic;
+    using HackerRank.CubeSummation.Cube3D.Models.Input;
     using NUnit.Framework;
 
     /// <summary>
@@ -11,11 +10,15 @@ namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
     [TestFixture]
     public class GenerateInputFormatTests : Cube3DBaseTests
     {
+
+        /// <summary>
+        /// Gives the dimension of matrix are equal to true.
+        /// </summary>
         [Test]
-        public void ShloudBeGenerateInputFormat()
+        public void GiveDimensionOfMatrixAreEqualToTrue()
         {
-            var inputFormat = this.generateInputFormat.GetInputFormat();
-            var result = this.cubeSummationCube3D.GetSumTotalOfEachQueryOperation(inputFormat);
+            var testCases = new List<TestCasesModel> { new TestCasesModel { DimensionOfMatrix = 1 }, new TestCasesModel { DimensionOfMatrix = 50 }, new TestCasesModel { DimensionOfMatrix = 100 } };
+            Assert.IsTrue(this.generateInputFormatValidation.IsTheNumberDimensionOfMatrixBetweenRange(testCases));
         }
 
         [TearDown]

@@ -6,6 +6,7 @@
     using HackerRank.CubeSummation.Cube3D.Business;
     using HackerRank.CubeSummation.Cube3D.Business.Interfaces;
     using HackerRank.CubeSummation.Cube3D.Interfaces;
+    using HackerRank.CubeSummation.Cube3D.Business.Validation;
     using NUnit.Framework;
 
     /// <summary>
@@ -30,6 +31,11 @@
         protected IGenerateCube generateCube;
 
         /// <summary>
+        /// The generate input format validation
+        /// </summary>
+        protected IGenerateInputFormatValidation generateInputFormatValidation;
+
+        /// <summary>
         /// Sets up.
         /// </summary>
         [SetUp]
@@ -38,9 +44,10 @@
             try
             {
                 var container = IocHelper.GetInstance();
-                generateInputFormat = (IGenerateInputFormat)container.Resolve("GenerateInputFormatFromText", typeof(GenerateInputFormatFromText));
-                cubeSummationCube3D = (ICubeSummationCube3D)container.Resolve("CubeSummationCube3D", typeof(CubeSummationCube3D));
-                generateCube = (IGenerateCube)container.Resolve("GenerateCube", typeof(GenerateCube));
+                this.generateInputFormat = (IGenerateInputFormat)container.Resolve("GenerateInputFormatFromText", typeof(GenerateInputFormatFromText));
+                this.cubeSummationCube3D = (ICubeSummationCube3D)container.Resolve("CubeSummationCube3D", typeof(CubeSummationCube3D));
+                this.generateCube = (IGenerateCube)container.Resolve("GenerateCube", typeof(GenerateCube));
+                this.generateInputFormatValidation = (IGenerateInputFormatValidation)container.Resolve("GenerateInputFormatValidation", typeof(GenerateInputFormatValidation));
             }
             catch (Exception exception)
             {

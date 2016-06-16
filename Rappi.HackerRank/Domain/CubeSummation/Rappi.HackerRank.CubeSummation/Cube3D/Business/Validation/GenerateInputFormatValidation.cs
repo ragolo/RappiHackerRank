@@ -48,9 +48,14 @@
         {
             if (testCasesModel == null) throw new ArgumentNullException("testCasesModel");
 
-            if (testCasesModel.Any(testCase => testCase.DimensionOfMatrix > ValidationModel.DimensionOfMatrix))
+            if (ValidationModel.DimensionOfMatrix < 1)
             {
-                throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, string.Format("La dimensión de la matrix no debe ser mayor a {0}", ValidationModel.DimensionOfMatrix));
+                throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, "La dimensión de la matrix debe ser un número positivo, valide su configuración.");
+            }
+
+            if (testCasesModel.Any(testCase => testCase.DimensionOfMatrix > ValidationModel.DimensionOfMatrix || testCase.DimensionOfMatrix < 1))
+            {
+                throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, string.Format("La dimensión de la matrix debe estar entre 1  y {0}", ValidationModel.DimensionOfMatrix));
             }
             return true;
         }
@@ -77,7 +82,7 @@
 
         public bool IsAllValidate(InputFormatModel inputFormatModel)
         {
-            throw new NotImplementedException();
+            return IsTheNumberDimensionOfMatrixBetweenRange(inputFormatModel.TestCases);
         }
     }
 }

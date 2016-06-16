@@ -1,10 +1,9 @@
-﻿using Rappi.HackerRank.CubeSummation.Cube3D.Business;
-using Rappi.HackerRank.CubeSummation.Cube3D.Models;
-
-namespace Rappi.HackerRank.CubeSummation.Installer
+﻿namespace Rappi.HackerRank.CubeSummation.Installer
 {
+    using Cube3D.Business;
     using Cube3D.Business.Validation;
     using Cube3D.Helpers;
+    using Cube3D.Models;
 
     /// <summary>
     /// Process Settings Factory
@@ -17,13 +16,15 @@ namespace Rappi.HackerRank.CubeSummation.Installer
         /// <returns></returns>
         public CubeSummationConfigurationSettings CreateProcessSettings()
         {
+            var validationModel = new ValidationModel
+            {
+                DimensionOfMatrix = ConfigurationManagerAppConfig.GetDimensionOfMatrix()
+            };
             var settings = new CubeSummationConfigurationSettings()
             {
+                ValidationModel = validationModel,
                 PathFile = ConfigurationManagerAppConfig.GetPathFile(),
-                GenerateInputFormatValidation = new GenerateInputFormatValidation(new ValidationModel
-                {
-                    DimensionOfMatrix = ConfigurationManagerAppConfig.GetDimensionOfMatrix()
-                }),
+                GenerateInputFormatValidation = new GenerateInputFormatValidation(validationModel),
                 GenerateCube = new GenerateCube()
             };
 

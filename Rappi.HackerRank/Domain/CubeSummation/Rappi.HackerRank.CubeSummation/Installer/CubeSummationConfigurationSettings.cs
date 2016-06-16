@@ -2,6 +2,7 @@
 {
     using Cube3D.Business.Validation;
     using Cube3D.Business;
+    using Cube3D.Models;
 
     /// <summary>
     /// Cube3D Configuration Settings
@@ -31,5 +32,13 @@
         /// The generate cube.
         /// </value>
         public GenerateCube GenerateCube { get; set; }
+
+        /// <summary>
+        /// Gets or sets the validation model.
+        /// </summary>
+        /// <value>
+        /// The validation model.
+        /// </value>
+        public ValidationModel ValidationModel { get; set; }
     }
 }

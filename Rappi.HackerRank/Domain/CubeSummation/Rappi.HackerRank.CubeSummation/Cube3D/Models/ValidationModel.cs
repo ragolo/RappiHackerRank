@@ -12,5 +12,13 @@
         /// The dimension of matrix.
         /// </value>
         public int DimensionOfMatrix { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number test case.
+        /// </summary>
+        /// <value>
+        /// The number test case.
+        /// </value>
+        public int TheNumberTestCase { get; set; }
     }
 }
