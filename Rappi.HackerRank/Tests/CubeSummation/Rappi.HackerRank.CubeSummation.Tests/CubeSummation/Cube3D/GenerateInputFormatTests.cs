@@ -133,6 +133,34 @@ namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
         }
 
         /// <summary>
+        /// Gives the coordinate greater than maximum int32 and less than dimension of matrix.
+        /// </summary>
+        [Test]
+        public void GiveCoordinateGreaterThanMaxInt32AndLessThanDimensionOfMatrix()
+        {
+            var testCase = new TestCasesModel { DimensionOfMatrix = 4 };
+            var queryModelList = new List<QueryModel>();
+            var query1Model = new QueryModel
+            {
+                Coordinate1 = new CoordinateModel { Position1 = 2,Position2 = 1,Position3 = 1 },
+                Coordinate2 = new CoordinateModel { Position1 = 2, Position2 = 1, Position3 = 1 }
+            };
+
+            var query2Model = new QueryModel
+            {
+                Coordinate1 = new CoordinateModel { Position1 = 2, Position2 = 1, Position3 = 1 },
+                Coordinate2 = new CoordinateModel { Position1 = 2, Position2 = 1, Position3 = 3 }
+            };
+
+            queryModelList.Add(query1Model);
+            queryModelList.Add(query2Model);
+
+            BuildNumberOfOperations(queryModelList, testCase);
+
+            Assert.True(generateInputFormatValidation.IsCoordinateGreaterThan0AndLessThanOrEqualDimensionOfMatrix(testCase)); 
+        }
+
+        /// <summary>
         /// Builds the number of operations.
         /// </summary>
         /// <param name="queryModelList">The query model list.</param>

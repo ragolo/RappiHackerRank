@@ -50,5 +50,12 @@
         /// <param name="testCasesModel">The test cases model.</param>
         /// <returns></returns>
         bool IsCoordinate1Position3LessOrEqualThanCoordinate2Position3(TestCasesModel testCasesModel);
+
+        /// <summary>
+        /// Determines whether [is coordinate greater than maximum int32 and less than dimension of matrix] [the specified test cases model].
+        /// </summary>
+        /// <param name="testCasesModel">The test cases model.</param>
+        /// <returns></returns>
+        bool IsCoordinateGreaterThan0AndLessThanOrEqualDimensionOfMatrix(TestCasesModel testCasesModel);
     }
 }

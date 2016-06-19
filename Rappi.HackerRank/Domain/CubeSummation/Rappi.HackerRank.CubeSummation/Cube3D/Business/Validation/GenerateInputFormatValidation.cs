@@ -141,5 +141,22 @@
 
             return (from operation in testCasesModel.Operations where operation.GetType() == typeof(QueryBusiness) select (QueryBusiness)operation into queryBusiness select queryBusiness.QueryModels).All(querymodel => querymodel.Coordinate1.Position3 >= 1 && querymodel.Coordinate1.Position3 <= querymodel.Coordinate2.Position3 && querymodel.Coordinate2.Position3 <= testCasesModel.DimensionOfMatrix);
         }
+
+        /// <summary>
+        /// Determines whether [is coordinate greater than maximum int32 and less than dimension of matrix] [the specified test cases model].
+        /// </summary>
+        /// <param name="testCasesModel">The test cases model.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException">Operations</exception>
+        public bool IsCoordinateGreaterThan0AndLessThanOrEqualDimensionOfMatrix(TestCasesModel testCasesModel)
+        {
+            if (testCasesModel.Operations == null)
+            {
+                throw new ArgumentNullException("Operations");
+            }
+            return (IsCoordinate1Position1LessOrEqualThanCoordinate2Position1(testCasesModel) &&
+                    IsCoordinate1Position2LessOrEqualThanCoordinate2Position2(testCasesModel) &&
+                    IsCoordinate1Position3LessOrEqualThanCoordinate2Position3(testCasesModel));
+        }
     }
 }
