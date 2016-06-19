@@ -76,6 +76,9 @@ namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
             Assert.True(generateInputFormatValidation.IsCoordinate1Position1LessOrEqualThanCoordinate2Position1(testCase));
         }
 
+        /// <summary>
+        /// Gives the coordinate1 position2 less or equal than coordinate2 position2.
+        /// </summary>
         [Test]
         public void GiveCoordinate1Position2LessOrEqualThanCoordinate2Position2()
         {
@@ -99,6 +102,34 @@ namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
             BuildNumberOfOperations(queryModelList, testCase);
 
             Assert.True(generateInputFormatValidation.IsCoordinate1Position2LessOrEqualThanCoordinate2Position2(testCase));
+        }
+
+        /// <summary>
+        /// Gives the coordinate1 position3 less or equal than coordinate2 position3.
+        /// </summary>
+        [Test]
+        public void GiveCoordinate1Position3LessOrEqualThanCoordinate2Position3()
+        {
+            var testCase = new TestCasesModel { DimensionOfMatrix = 2 };
+            var queryModelList = new List<QueryModel>();
+            var query1Model = new QueryModel
+            {
+                Coordinate1 = new CoordinateModel { Position3 = 1 },
+                Coordinate2 = new CoordinateModel { Position3 = 2 }
+            };
+
+            var query2Model = new QueryModel
+            {
+                Coordinate1 = new CoordinateModel { Position3 = 2 },
+                Coordinate2 = new CoordinateModel { Position3 = 2 }
+            };
+
+            queryModelList.Add(query1Model);
+            queryModelList.Add(query2Model);
+
+            BuildNumberOfOperations(queryModelList, testCase);
+
+            Assert.True(generateInputFormatValidation.IsCoordinate1Position3LessOrEqualThanCoordinate2Position3(testCase));
         }
 
         /// <summary>

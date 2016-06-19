@@ -1,11 +1,10 @@
-﻿using System;
-using Rappi.HackerRank.CubeSummation.Cube3D.ConstAndEnumerations;
-using Rappi.HackerRank.CubeSummation.Cube3D.Exceptions;
-
-namespace Rappi.HackerRank.CubeSummation.Cube3D
+﻿namespace Rappi.HackerRank.CubeSummation.Cube3D
 {
+    using System;
     using System.Collections.Generic;
     using Business.Interfaces;
+    using ConstAndEnumerations;
+    using Exceptions;
     using Interfaces;
     using Models.Input;
 
@@ -50,19 +49,19 @@ namespace Rappi.HackerRank.CubeSummation.Cube3D
             try
             {
                 var result = new List<int>();
-                    foreach (var testCase in inputFormatModel.TestCases)
-                    {
-                        cube3D = generateCube.GetCube3D(testCase.DimensionOfMatrix);
+                foreach (var testCase in inputFormatModel.TestCases)
+                {
+                    cube3D = generateCube.GetCube3D(testCase.DimensionOfMatrix);
 
-                        foreach (var operation in testCase.Operations)
+                    foreach (var operation in testCase.Operations)
+                    {
+                        operation.Excecute(cube3D);
+                        if (operation.AnyValueOfReturn)
                         {
-                            operation.Excecute(cube3D);
-                            if (operation.AnyValueOfReturn)
-                            {
-                                result.Add(operation.Result);
-                            }
+                            result.Add(operation.Result);
                         }
                     }
+                }
                 return result;
             }
             catch (CubeSummationException ex)
