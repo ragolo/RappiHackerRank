@@ -29,7 +29,9 @@
             {
                 ValidationModel = validationModel,
                 PathFile = ConfigurationManagerAppConfig.GetPathFile(),
-                GenerateInputFormatValidation = new GenerateInputFormatValidation(validationModel),
+                GenerateInputFormatValidation = new GenerateInputFormatValidation(),
+                QueryBusinessValidation = new QueryBusinessValidation(),
+                UpdateBusinessValidation = new UpdateBusinessValidation(),
                 GenerateCube = new GenerateCube()
             };
 

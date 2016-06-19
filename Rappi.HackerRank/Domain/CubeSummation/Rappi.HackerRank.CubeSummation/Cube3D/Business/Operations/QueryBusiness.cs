@@ -1,13 +1,36 @@
 ﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Business.Operations
 {
+    using ConstAndEnumerations;
+    using Exceptions;
     using Interfaces;
     using Models.Input.Operations;
+    using Validation;
 
     /// <summary>
     /// Query Model
     /// </summary>
     public class QueryBusiness : IOperation
     {
+        /// <summary>
+        /// The query business validation
+        /// </summary>
+        private readonly QueryBusinessValidation queryBusinessValidation;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryBusiness"/> class.
+        /// </summary>
+        public QueryBusiness()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryBusiness" /> class.
+        /// </summary>
+        /// <param name="queryBusinessValidation">The query business validation.</param>
+        public QueryBusiness(QueryBusinessValidation queryBusinessValidation)
+        {
+            this.queryBusinessValidation = queryBusinessValidation;
+        }
         /// <summary>
         /// The result
         /// </summary>
@@ -27,15 +50,22 @@
         /// <param name="cube3D"></param>
         public void Excecute(int[, ,] cube3D)
         {
-            for (var i = QueryModels.Coordinate1.Position1; i <= QueryModels.Coordinate2.Position1; i++)
+            if (queryBusinessValidation.IsCoordinateGreaterThan0AndLessThanOrEqualDimensionOfMatrix(QueryModels, cube3D.Length))
             {
-                for (var j = QueryModels.Coordinate1.Position2; j <= QueryModels.Coordinate2.Position2; j++)
+                for (var i = QueryModels.Coordinate1.Position1; i <= QueryModels.Coordinate2.Position1; i++)
                 {
-                    for (var k = QueryModels.Coordinate1.Position3; k <= QueryModels.Coordinate2.Position3; k++)
+                    for (var j = QueryModels.Coordinate1.Position2; j <= QueryModels.Coordinate2.Position2; j++)
                     {
-                        result += cube3D[i, j, k];
+                        for (var k = QueryModels.Coordinate1.Position3; k <= QueryModels.Coordinate2.Position3; k++)
+                        {
+                            result += cube3D[i, j, k];
+                        }
                     }
                 }
+            }
+            else
+            {
+                throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, string.Format("Validar las coordenadas de la matrix y su ultima coordenada no puede superior a {0}", cube3D.Length));
             }
         }
 

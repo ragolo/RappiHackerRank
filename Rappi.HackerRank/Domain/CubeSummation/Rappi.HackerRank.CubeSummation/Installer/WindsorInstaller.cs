@@ -1,5 +1,7 @@
-﻿using Rappi.HackerRank.CubeSummation.Cube3D.Business;
+﻿using System.Collections.Generic;
+using Rappi.HackerRank.CubeSummation.Cube3D.Business;
 using Rappi.HackerRank.CubeSummation.Cube3D.Business.Interfaces;
+using Rappi.HackerRank.CubeSummation.Cube3D.Business.Operations;
 using Rappi.HackerRank.CubeSummation.Cube3D.Business.Validation;
 
 namespace Rappi.HackerRank.CubeSummation.Installer
@@ -50,24 +52,51 @@ namespace Rappi.HackerRank.CubeSummation.Installer
         /// <param name="store">The configuration store.</param>
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
+            var dependenciesUpdateBusiness = new List<Dependency>
+            {
+                Dependency.OnValue("updateBusinessValidation",cubeSummationConfigurationSettings.UpdateBusinessValidation),
+                Dependency.OnValue("validationModel", cubeSummationConfigurationSettings.ValidationModel)
+            };
+
+            var dependenciesCubeSummationCube3D = new List<Dependency>
+            {
+                Dependency.OnValue("generateInputFormatValidation",cubeSummationConfigurationSettings.GenerateInputFormatValidation),
+                Dependency.OnValue("generateCube",cubeSummationConfigurationSettings.GenerateCube),
+                Dependency.OnValue("validationModel",cubeSummationConfigurationSettings.ValidationModel)
+            };
+
             baseContainer.Register(
                     Component.For<IGenerateInputFormatValidation>()
                     .ImplementedBy<GenerateInputFormatValidation>()
                     .DependsOn(Dependency.OnValue("validationModel", cubeSummationConfigurationSettings.ValidationModel))
                     .Named("GenerateInputFormatValidation").LifeStyle.Is(defaultLifeStyleType),
+                    Component.For<IQueryBusinessValidation>()
+                    .ImplementedBy<QueryBusinessValidation>()
+                    .Named("QueryBusinessValidation").LifeStyle.Is(defaultLifeStyleType),
+                     Component.For<IUpdateBusinessValidation>()
+                    .ImplementedBy<UpdateBusinessValidation>()
+                    .Named("UpdateBusinessValidation").LifeStyle.Is(defaultLifeStyleType),
                     Component.For<IGenerateInputFormat>()
                     .ImplementedBy<GenerateInputFormatFromText>()
                     .DependsOn(Dependency.OnValue("pathFile", cubeSummationConfigurationSettings.PathFile))
                     .Named("GenerateInputFormatFromText").LifeStyle.Is(defaultLifeStyleType),
+                    Component.For<IOperation>()
+                    .ImplementedBy<QueryBusiness>()
+                    .DependsOn(Dependency.OnValue("queryBusinessValidation", cubeSummationConfigurationSettings.QueryBusinessValidation))
+                    .Named("QueryBusiness").LifeStyle.Is(defaultLifeStyleType),
+                     Component.For<IOperation>()
+                    .ImplementedBy<UpdateBusiness>()
+                    .DependsOn(dependenciesUpdateBusiness.ToArray())
+                    .Named("UpdateBusiness").LifeStyle.Is(defaultLifeStyleType),
                     Component.For<ICubeSummationCube3D>()
                     .ImplementedBy<CubeSummationCube3D>()
-                    .DependsOn(Dependency.OnValue("generateInputFormatValidation", cubeSummationConfigurationSettings.GenerateInputFormatValidation))
+                    .DependsOn(dependenciesCubeSummationCube3D.ToArray())
                     .Named("CubeSummationCube3D").LifeStyle.Is(defaultLifeStyleType),
                     Component.For<IGenerateCube>()
                     .ImplementedBy<GenerateCube>()
                     .Named("GenerateCube").LifeStyle.Is(defaultLifeStyleType)
 
-                    
+
                 );
         }
     }

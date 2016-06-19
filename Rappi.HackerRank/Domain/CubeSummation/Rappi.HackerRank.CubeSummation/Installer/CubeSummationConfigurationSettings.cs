@@ -26,6 +26,22 @@
         public GenerateInputFormatValidation GenerateInputFormatValidation { get; set; }
 
         /// <summary>
+        /// Gets or sets the query business validation.
+        /// </summary>
+        /// <value>
+        /// The query business validation.
+        /// </value>
+        public QueryBusinessValidation QueryBusinessValidation { get; set; }
+
+        /// <summary>
+        /// Gets or sets the update business validation.
+        /// </summary>
+        /// <value>
+        /// The update business validation.
+        /// </value>
+        public UpdateBusinessValidation UpdateBusinessValidation { get; set; }
+
+        /// <summary>
         /// Gets or sets the generate cube.
         /// </summary>
         /// <value>

@@ -66,7 +66,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CubeSummation\Cube3D\Cube3DBaseTests.cs" />
-    <Compile Include="CubeSummation\Cube3D\GenerateInputFormatTests.cs" />
+    <Compile Include="CubeSummation\Cube3D\Business\GenerateInputFormatTests.cs" />
+    <Compile Include="CubeSummation\Cube3D\Business\Validation\UpdateBusinessValidationTests.cs" />
+    <Compile Include="CubeSummation\Cube3D\Business\Validation\QueryBusinessValidationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CubeSummation\CubeSummationSetUpFixture.cs" />
   </ItemGroup>

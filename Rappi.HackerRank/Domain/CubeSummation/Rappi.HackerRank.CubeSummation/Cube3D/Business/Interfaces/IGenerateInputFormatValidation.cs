@@ -1,6 +1,6 @@
 ﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Business.Interfaces
 {
-    using System.Collections.Generic;
+    using Models;
     using Models.Input;
 
     /// <summary>
@@ -13,56 +13,24 @@
         /// Determines whether [is the number test case between range] [the specified input format model].
         /// </summary>
         /// <param name="inputFormatModel">The input format model.</param>
+        /// <param name="validationModel">The validation model.</param>
         /// <returns></returns>
-        bool IsTheNumberTestCaseBetweenRange(InputFormatModel inputFormatModel);
+        bool IsTheNumberTestCaseBetweenRange(InputFormatModel inputFormatModel, ValidationModel validationModel);
 
         /// <summary>
         /// Determines whether [is the number dimension of matrix between range] [the specified test cases model].
         /// </summary>
-        /// <param name="testCasesModel">The test cases model.</param>
+        /// <param name="testCase">The test case.</param>
+        /// <param name="validationModel">The validation model.</param>
         /// <returns></returns>
-        bool IsTheNumberDimensionOfMatrixBetweenRange(List<TestCasesModel> testCasesModel);
+        bool IsTheNumberDimensionOfMatrixBetweenRange(TestCasesModel testCase, ValidationModel validationModel);
 
         /// <summary>
         /// Determines whether [is the number of operations between range] [the specified input format model].
         /// </summary>
-        /// <param name="testCasesModel">The test cases model.</param>
+        /// <param name="operations">The operations.</param>
+        /// <param name="validationModel">The validation model.</param>
         /// <returns></returns>
-        bool IsTheNumberOfOperationsBetweenRange(TestCasesModel testCasesModel);
-
-        /// <summary>
-        /// Determines whether [is coordinate1 position1 less or equal than coordinate2 position1] [the specified input format model].
-        /// </summary>
-        /// <param name="testCasesModel">The test cases model.</param>
-        /// <returns></returns>
-        bool IsCoordinate1Position1LessOrEqualThanCoordinate2Position1(TestCasesModel testCasesModel);
-
-        /// <summary>
-        /// Determines whether [is coordinate1 position2 less or equal than coordinate2 position2] [the specified input format model].
-        /// </summary>
-        /// <param name="testCasesModel">The test cases model.</param>
-        /// <returns></returns>
-        bool IsCoordinate1Position2LessOrEqualThanCoordinate2Position2(TestCasesModel testCasesModel);
-
-        /// <summary>
-        /// Determines whether [is coordinate1 position3 less or equal than coordinate2 position3] [the specified input format model].
-        /// </summary>
-        /// <param name="testCasesModel">The test cases model.</param>
-        /// <returns></returns>
-        bool IsCoordinate1Position3LessOrEqualThanCoordinate2Position3(TestCasesModel testCasesModel);
-
-        /// <summary>
-        /// Determines whether [is coordinate greater than maximum int32 and less than dimension of matrix] [the specified test cases model].
-        /// </summary>
-        /// <param name="testCasesModel">The test cases model.</param>
-        /// <returns></returns>
-        bool IsCoordinateGreaterThan0AndLessThanOrEqualDimensionOfMatrix(TestCasesModel testCasesModel);
-
-        /// <summary>
-        /// Determines whether [is value of block less equal to value of block maximum and greater than value of block minimum] [the specified test cases model].
-        /// </summary>
-        /// <param name="testCasesModel">The test cases model.</param>
-        /// <returns></returns>
-        bool IsValueOfBlockLessEqualToValueOfBlockMaxAndGreaterThanValueOfBlockMin(TestCasesModel testCasesModel);
+        bool IsTheNumberOfOperationsBetweenRange(IOperation[] operations, ValidationModel validationModel);
     }
 }

@@ -98,15 +98,19 @@
 
                     if (lines[currentPositionOfOperation].StartsWith(InputFormatConstAndEnum.OperatonUpdateStartWith))
                     {
-                        var updateBusiness = new UpdateBusiness();
-                        updateBusiness.UpdateModels = GetUpdateModelsToOperationModel(lines, currentPositionOfOperation);
+                        var updateBusiness = new UpdateBusiness
+                        {
+                            UpdateModels = GetUpdateModelsToOperationModel(lines, currentPositionOfOperation)
+                        };
                         inputFormatModel.TestCases[positionTestCase].Operations[indexPositionOfOperation] = updateBusiness;
                     }
                     else
                         if (lines[currentPositionOfOperation].StartsWith(InputFormatConstAndEnum.OperationQueryStartWith))
                         {
-                            var queryBusiness = new QueryBusiness();
-                            queryBusiness.QueryModels = GetQueryModelsToOperationModel(lines, currentPositionOfOperation);
+                            var queryBusiness = new QueryBusiness
+                            {
+                                QueryModels = GetQueryModelsToOperationModel(lines, currentPositionOfOperation)
+                            };
                             inputFormatModel.TestCases[positionTestCase].Operations[indexPositionOfOperation] = queryBusiness;
                         }
 

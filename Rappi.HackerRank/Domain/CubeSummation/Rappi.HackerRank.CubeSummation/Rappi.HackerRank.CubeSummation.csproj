@@ -52,13 +52,17 @@
   <ItemGroup>
     <Compile Include="Cube3D\Business\GenerateCube.cs" />
     <Compile Include="Cube3D\Business\Interfaces\IGenerateCube.cs" />
+    <Compile Include="Cube3D\Business\Interfaces\IQueryBusinessValidation.cs" />
+    <Compile Include="Cube3D\Business\Interfaces\IUpdateBusinessValidation.cs" />
     <Compile Include="Cube3D\Business\Operations\QueryBusiness.cs" />
     <Compile Include="Cube3D\Business\Operations\UpdateBusiness.cs" />
+    <Compile Include="Cube3D\Business\Validation\QueryBusinessValidation.cs" />
+    <Compile Include="Cube3D\Business\Validation\UpdateBusinessValidation.cs" />
     <Compile Include="Cube3D\ConstAndEnumerations\AppSettingsConstants.cs" />
     <Compile Include="Cube3D\ConstAndEnumerations\CubeSummationCube3DConstAndEnum.cs" />
     <Compile Include="Cube3D\ConstAndEnumerations\CubeSummationExceptionType.cs" />
     <Compile Include="Cube3D\ConstAndEnumerations\InputFormatConstAndEnum.cs" />
-    <Compile Include="Cube3D\CubeSummationCube3D.cs" />
+    <Compile Include="Cube3D\Business\CubeSummationCube3D.cs" />
     <Compile Include="Cube3D\Exceptions\CubeSummationException.cs" />
     <Compile Include="Cube3D\Business\GenerateInputFormatFromText.cs" />
     <Compile Include="Cube3D\Helpers\FileText.cs" />

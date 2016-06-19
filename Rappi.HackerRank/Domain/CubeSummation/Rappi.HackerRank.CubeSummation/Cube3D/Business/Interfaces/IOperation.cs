@@ -1,5 +1,7 @@
 ﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Business.Interfaces
 {
+    using Models;
+
     /// <summary>
     /// IOperation
     /// </summary>
@@ -16,7 +18,7 @@
         /// <value>
         ///   <c>true</c> if [any value of return]; otherwise, <c>false</c>.
         /// </value>
-        bool AnyValueOfReturn { get;}
+        bool AnyValueOfReturn { get; }
 
         /// <summary>
         /// Gets the result.
@@ -24,6 +26,6 @@
         /// <value>
         /// The result.
         /// </value>
-        int Result { get;}
+        int Result { get; }
     }
 }

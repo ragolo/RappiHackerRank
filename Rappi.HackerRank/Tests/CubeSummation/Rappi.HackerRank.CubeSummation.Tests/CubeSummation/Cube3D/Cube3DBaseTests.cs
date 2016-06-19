@@ -2,7 +2,6 @@
 {
     using System;
     using Core.IoC;
-    using HackerRank.CubeSummation.Cube3D;
     using HackerRank.CubeSummation.Cube3D.Business;
     using HackerRank.CubeSummation.Cube3D.Business.Interfaces;
     using HackerRank.CubeSummation.Cube3D.Interfaces;
@@ -36,6 +35,16 @@
         protected IGenerateInputFormatValidation generateInputFormatValidation;
 
         /// <summary>
+        /// The query business validation
+        /// </summary>
+        protected IQueryBusinessValidation queryBusinessValidation;
+
+        /// <summary>
+        /// The update business validation
+        /// </summary>
+        protected IUpdateBusinessValidation updateBusinessValidation;
+
+        /// <summary>
         /// Sets up.
         /// </summary>
         [SetUp]
@@ -48,6 +57,8 @@
                 this.cubeSummationCube3D = (ICubeSummationCube3D)container.Resolve("CubeSummationCube3D", typeof(CubeSummationCube3D));
                 this.generateCube = (IGenerateCube)container.Resolve("GenerateCube", typeof(GenerateCube));
                 this.generateInputFormatValidation = (IGenerateInputFormatValidation)container.Resolve("GenerateInputFormatValidation", typeof(GenerateInputFormatValidation));
+                this.updateBusinessValidation =(IUpdateBusinessValidation)container.Resolve("UpdateBusinessValidation", typeof (UpdateBusinessValidation));
+                this.queryBusinessValidation = (IQueryBusinessValidation)container.Resolve("QueryBusinessValidation", typeof(QueryBusinessValidation));
             }
             catch (Exception exception)
             {
