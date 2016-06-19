@@ -8,6 +8,7 @@
     using Interfaces;
     using Models;
     using Models.Input;
+    using Operations;
 
     /// <summary>
     /// Generate Input Format Validation
@@ -50,11 +51,7 @@
                 throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, "El número de casos debe se un número positivo, valide su configuración.");
             }
 
-            if (inputFormatModel.NumberOfTestCase > ValidationModel.TheNumberTestCase)
-            {
-                throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, string.Format("Los casos de prueba deben estar entre 1 y {0}", ValidationModel.TheNumberTestCase));
-            }
-            return true;
+            return inputFormatModel.NumberOfTestCase <= ValidationModel.TheNumberTestCase;
         }
 
         /// <summary>
@@ -73,11 +70,7 @@
                 throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, "La dimensión de la matrix debe ser un número positivo, valide su configuración.");
             }
 
-            if (testCasesModel.Any(testCase => testCase.DimensionOfMatrix > ValidationModel.DimensionOfMatrix || testCase.DimensionOfMatrix < 1))
-            {
-                throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, string.Format("La dimensión de la matrix debe estar entre 1  y {0}", ValidationModel.DimensionOfMatrix));
-            }
-            return true;
+            return !testCasesModel.Any(testCase => testCase.DimensionOfMatrix > ValidationModel.DimensionOfMatrix || testCase.DimensionOfMatrix < 1);
         }
 
         /// <summary>
@@ -92,26 +85,29 @@
         /// </exception>
         public bool IsTheNumberOfOperationsBetweenRange(TestCasesModel testCasesModel)
         {
-            if (testCasesModel == null)
-            {
-                throw new CubeSummationException("testCasesModel");
-            }
+            if (testCasesModel == null) throw new ArgumentNullException("testCasesModel");
 
             if (ValidationModel.NumberOfOperations < 1)
             {
                 throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, "El número de operaciones debe ser un número positivo, valide su configuración.");
             }
 
-            if (testCasesModel.NumberOfOperations > ValidationModel.NumberOfOperations)
-            {
-                throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, string.Format("El número de las operaciones debe ser entre 1  y {0}", ValidationModel.NumberOfOperations));
-            }
-            return true;
+            return testCasesModel.NumberOfOperations <= ValidationModel.NumberOfOperations;
         }
 
-        public bool IsCoordinate1Position1LessOrEqualThanCoordinate2Position1(InputFormatModel inputFormatModel)
+        /// <summary>
+        /// Determines whether [is coordinate1 position1 less or equal than coordinate2 position1] [the specified input format model].
+        /// </summary>
+        /// <param name="testCasesModel">The test cases model.</param>
+        /// <returns></returns>
+        public bool IsCoordinate1Position1LessOrEqualThanCoordinate2Position1(TestCasesModel testCasesModel)
         {
-            throw new NotImplementedException();
+            if (testCasesModel.Operations == null)
+            {
+                throw new ArgumentNullException("Operations");
+            }
+
+            return (from operation in testCasesModel.Operations where operation.GetType() == typeof(QueryBusiness) select (QueryBusiness)operation into queryBusiness select queryBusiness.QueryModels).All(querymodel => querymodel.Coordinate1.Position1 >= 1 && querymodel.Coordinate1.Position1 <= querymodel.Coordinate2.Position1 && querymodel.Coordinate2.Position1 <= testCasesModel.DimensionOfMatrix);
         }
 
         public bool IsCoordinate1Position2LessOrEqualThanCoordinate2Position2(InputFormatModel inputFormatModel)

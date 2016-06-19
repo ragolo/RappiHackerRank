@@ -33,9 +33,9 @@
         /// <summary>
         /// Determines whether [is coordinate1 position1 less or equal than coordinate2 position1] [the specified input format model].
         /// </summary>
-        /// <param name="inputFormatModel">The input format model.</param>
+        /// <param name="testCasesModel">The test cases model.</param>
         /// <returns></returns>
-        bool IsCoordinate1Position1LessOrEqualThanCoordinate2Position1(InputFormatModel inputFormatModel);
+        bool IsCoordinate1Position1LessOrEqualThanCoordinate2Position1(TestCasesModel testCasesModel);
 
         /// <summary>
         /// Determines whether [is coordinate1 position2 less or equal than coordinate2 position2] [the specified input format model].
