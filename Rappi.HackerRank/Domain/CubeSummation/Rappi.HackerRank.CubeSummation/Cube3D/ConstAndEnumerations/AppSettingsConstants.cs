@@ -14,5 +14,15 @@
         /// The dimension of matrix
         /// </summary>
         public const string DimensionOfMatrix = "DimensionOfMatrix";
+
+        /// <summary>
+        /// The number test case
+        /// </summary>
+        public const string NumberTestCase = "NumberTestCase";
+
+        /// <summary>
+        /// The number of operations
+        /// </summary>
+        public const string NumberOfOperations = "NumberOfOperations";
     }
 }

@@ -21,6 +21,26 @@
             Assert.IsTrue(this.generateInputFormatValidation.IsTheNumberDimensionOfMatrixBetweenRange(testCases));
         }
 
+        /// <summary>
+        /// Gives the number test case are equal to true.
+        /// </summary>
+        [Test]
+        public void GiveNumberTestCaseAreEqualToTrue()
+        {
+            var inputFormatModel = new InputFormatModel { NumberOfTestCase = 50 };
+            Assert.IsTrue(this.generateInputFormatValidation.IsTheNumberTestCaseBetweenRange(inputFormatModel));
+        }
+
+        /// <summary>
+        /// Gives the number of operations are equal to true.
+        /// </summary>
+        [Test]
+        public void GiveNumberOfOperationsAreEqualToTrue()
+        {
+            var testCases = new TestCasesModel { NumberOfOperations = 1000 };
+            Assert.IsTrue(this.generateInputFormatValidation.IsTheNumberOfOperationsBetweenRange(testCases));
+        }
+
         [TearDown]
         public void TearDown()
         {

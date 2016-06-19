@@ -32,9 +32,29 @@
             ValidationModel = validationModel;
         }
 
+        /// <summary>
+        /// Determines whether [is the number test case between range] [the specified input format model].
+        /// </summary>
+        /// <param name="inputFormatModel">The input format model.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException">inputFormatModel</exception>
+        /// <exception cref="CubeSummationException">El número de casos debe se un número positivo, valide su configuración.</exception>
         public bool IsTheNumberTestCaseBetweenRange(InputFormatModel inputFormatModel)
         {
-            throw new NotImplementedException();
+            if (inputFormatModel == null)
+            {
+                throw new ArgumentNullException("inputFormatModel");
+            }
+            if (inputFormatModel.NumberOfTestCase < 1)
+            {
+                throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, "El número de casos debe se un número positivo, valide su configuración.");
+            }
+
+            if (inputFormatModel.NumberOfTestCase > ValidationModel.TheNumberTestCase)
+            {
+                throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, string.Format("Los casos de prueba deben estar entre 1 y {0}", ValidationModel.TheNumberTestCase));
+            }
+            return true;
         }
 
         /// <summary>
@@ -60,9 +80,33 @@
             return true;
         }
 
-        public bool IsTheNumberOfOperationsBetweenRange(InputFormatModel inputFormatModel)
+        /// <summary>
+        /// Determines whether [is the number of operations between range] [the specified input format model].
+        /// </summary>
+        /// <param name="testCasesModel">The test cases model.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException">testCasesModel</exception>
+        /// <exception cref="CubeSummationException">
+        /// El número de operaciones debe ser un número positivo, valide su configuración.
+        /// or
+        /// </exception>
+        public bool IsTheNumberOfOperationsBetweenRange(TestCasesModel testCasesModel)
         {
-            throw new NotImplementedException();
+            if (testCasesModel == null)
+            {
+                throw new CubeSummationException("testCasesModel");
+            }
+
+            if (ValidationModel.NumberOfOperations < 1)
+            {
+                throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, "El número de operaciones debe ser un número positivo, valide su configuración.");
+            }
+
+            if (testCasesModel.NumberOfOperations > ValidationModel.NumberOfOperations)
+            {
+                throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, string.Format("El número de las operaciones debe ser entre 1  y {0}", ValidationModel.NumberOfOperations));
+            }
+            return true;
         }
 
         public bool IsCoordinate1Position1LessOrEqualThanCoordinate2Position1(InputFormatModel inputFormatModel)

@@ -10,6 +10,7 @@
     /// </summary>
     public class ProcessSettingsFactory
     {
+
         /// <summary>
         /// Creates the process settings.
         /// </summary>
@@ -18,7 +19,9 @@
         {
             var validationModel = new ValidationModel
             {
-                DimensionOfMatrix = ConfigurationManagerAppConfig.GetDimensionOfMatrix()
+                DimensionOfMatrix = ConfigurationManagerAppConfig.GetDimensionOfMatrix(),
+                TheNumberTestCase = ConfigurationManagerAppConfig.GetNumberTestCase(),
+                NumberOfOperations = ConfigurationManagerAppConfig.GetNumberOfOperations()
             };
             var settings = new CubeSummationConfigurationSettings()
             {

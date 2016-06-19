@@ -20,5 +20,13 @@
         /// The number test case.
         /// </value>
         public int TheNumberTestCase { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number of operations.
+        /// </summary>
+        /// <value>
+        /// The number of operations.
+        /// </value>
+        public int NumberOfOperations { get; set; }
     }
 }

@@ -26,9 +26,9 @@
         /// <summary>
         /// Determines whether [is the number of operations between range] [the specified input format model].
         /// </summary>
-        /// <param name="inputFormatModel">The input format model.</param>
+        /// <param name="testCasesModel">The test cases model.</param>
         /// <returns></returns>
-        bool IsTheNumberOfOperationsBetweenRange(InputFormatModel inputFormatModel);
+        bool IsTheNumberOfOperationsBetweenRange(TestCasesModel testCasesModel);
 
         /// <summary>
         /// Determines whether [is coordinate1 position1 less or equal than coordinate2 position1] [the specified input format model].

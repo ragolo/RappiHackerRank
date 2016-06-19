@@ -15,13 +15,14 @@
         /// <summary>
         /// Sets up.
         /// </summary>
-        [SetUp]
+        [SetUp] 
         protected virtual void SetUp()
         {
             try
             {
                 var container = IocHelper.GetInstance();
-                container.Install(new WindsorInstaller(container, LifestyleType.Thread, new ProcessSettingsFactory().CreateProcessSettings()));
+                container.Install(new WindsorInstaller(container, LifestyleType.Thread,
+                    new ProcessSettingsFactory().CreateProcessSettings()));
             }
             catch (Exception exception)
             {
