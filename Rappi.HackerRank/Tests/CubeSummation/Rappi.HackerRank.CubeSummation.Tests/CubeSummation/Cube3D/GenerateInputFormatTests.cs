@@ -1,7 +1,6 @@
-﻿using System;
-
-namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
+﻿namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using HackerRank.CubeSummation.Cube3D.Business.Interfaces;
@@ -71,7 +70,7 @@ namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
             queryModelList.Add(query1Model);
             queryModelList.Add(query2Model);
 
-            BuildNumberOfOperations(queryModelList, testCase);
+            BuildNumberOfOperationsQuery(queryModelList, testCase);
 
             Assert.True(generateInputFormatValidation.IsCoordinate1Position1LessOrEqualThanCoordinate2Position1(testCase));
         }
@@ -99,7 +98,7 @@ namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
             queryModelList.Add(query1Model);
             queryModelList.Add(query2Model);
 
-            BuildNumberOfOperations(queryModelList, testCase);
+            BuildNumberOfOperationsQuery(queryModelList, testCase);
 
             Assert.True(generateInputFormatValidation.IsCoordinate1Position2LessOrEqualThanCoordinate2Position2(testCase));
         }
@@ -127,46 +126,46 @@ namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
             queryModelList.Add(query1Model);
             queryModelList.Add(query2Model);
 
-            BuildNumberOfOperations(queryModelList, testCase);
+            BuildNumberOfOperationsQuery(queryModelList, testCase);
 
             Assert.True(generateInputFormatValidation.IsCoordinate1Position3LessOrEqualThanCoordinate2Position3(testCase));
         }
 
         /// <summary>
-        /// Gives the coordinate greater than maximum int32 and less than dimension of matrix.
+        /// Gives the value of block less equal to value of block maximum and greater than value of block minimum.
         /// </summary>
         [Test]
-        public void GiveCoordinateGreaterThanMaxInt32AndLessThanDimensionOfMatrix()
+        public void GiveValueOfBlockLessEqualToValueOfBlockMaxAndGreaterThanValueOfBlockMin()
         {
             var testCase = new TestCasesModel { DimensionOfMatrix = 4 };
-            var queryModelList = new List<QueryModel>();
-            var query1Model = new QueryModel
-            {
-                Coordinate1 = new CoordinateModel { Position1 = 2,Position2 = 1,Position3 = 1 },
-                Coordinate2 = new CoordinateModel { Position1 = 2, Position2 = 1, Position3 = 1 }
-            };
-
-            var query2Model = new QueryModel
+            var queryModelList = new List<UpdateModel>();
+            var query1Model = new UpdateModel
             {
                 Coordinate1 = new CoordinateModel { Position1 = 2, Position2 = 1, Position3 = 1 },
-                Coordinate2 = new CoordinateModel { Position1 = 2, Position2 = 1, Position3 = 3 }
+                ValueOfBlock = 12222
+            };
+
+            var query2Model = new UpdateModel
+            {
+                Coordinate1 = new CoordinateModel { Position1 = 2, Position2 = 1, Position3 = 1 },
+                ValueOfBlock = 1000000000
             };
 
             queryModelList.Add(query1Model);
             queryModelList.Add(query2Model);
 
-            BuildNumberOfOperations(queryModelList, testCase);
+            BuildNumberOfOperationsUpdate(queryModelList, testCase);
 
-            Assert.True(generateInputFormatValidation.IsCoordinateGreaterThan0AndLessThanOrEqualDimensionOfMatrix(testCase)); 
+            Assert.True(generateInputFormatValidation.IsValueOfBlockLessEqualToValueOfBlockMaxAndGreaterThanValueOfBlockMin(testCase));
         }
 
         /// <summary>
-        /// Builds the number of operations.
+        /// Builds the number of operations query.
         /// </summary>
         /// <param name="queryModelList">The query model list.</param>
         /// <param name="testCase">The test case.</param>
         /// <exception cref="ArgumentNullException">queryModelList</exception>
-        private void BuildNumberOfOperations(IReadOnlyList<QueryModel> queryModelList, TestCasesModel testCase)
+        private void BuildNumberOfOperationsQuery(IReadOnlyList<QueryModel> queryModelList, TestCasesModel testCase)
         {
             if (queryModelList == null)
             {
@@ -178,6 +177,27 @@ namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
             {
                 var queryBusiness = new QueryBusiness { QueryModels = queryModelList[i] };
                 testCase.Operations[i] = queryBusiness;
+            }
+        }
+
+        /// <summary>
+        /// Builds the number of operations update.
+        /// </summary>
+        /// <param name="updateModelList">The query model list.</param>
+        /// <param name="testCase">The test case.</param>
+        /// <exception cref="ArgumentNullException">queryModelList</exception>
+        private void BuildNumberOfOperationsUpdate(IReadOnlyList<UpdateModel> updateModelList, TestCasesModel testCase)
+        {
+            if (updateModelList == null)
+            {
+                throw new ArgumentNullException("updateModelList");
+            }
+            testCase.NumberOfOperations = updateModelList.Count();
+            testCase.Operations = new IOperation[testCase.NumberOfOperations];
+            for (var i = 0; i < testCase.NumberOfOperations; i++)
+            {
+                var updateBusiness = new UpdateBusiness { UpdateModels = updateModelList[i] };
+                testCase.Operations[i] = updateBusiness;
             }
         }
 

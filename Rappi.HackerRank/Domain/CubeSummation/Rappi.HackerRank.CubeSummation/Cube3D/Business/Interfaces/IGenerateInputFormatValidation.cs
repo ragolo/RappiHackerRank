@@ -57,5 +57,12 @@
         /// <param name="testCasesModel">The test cases model.</param>
         /// <returns></returns>
         bool IsCoordinateGreaterThan0AndLessThanOrEqualDimensionOfMatrix(TestCasesModel testCasesModel);
+
+        /// <summary>
+        /// Determines whether [is value of block less equal to value of block maximum and greater than value of block minimum] [the specified test cases model].
+        /// </summary>
+        /// <param name="testCasesModel">The test cases model.</param>
+        /// <returns></returns>
+        bool IsValueOfBlockLessEqualToValueOfBlockMaxAndGreaterThanValueOfBlockMin(TestCasesModel testCasesModel);
     }
 }

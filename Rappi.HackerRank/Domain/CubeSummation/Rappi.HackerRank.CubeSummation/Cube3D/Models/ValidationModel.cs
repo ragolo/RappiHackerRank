@@ -28,5 +28,21 @@
         /// The number of operations.
         /// </value>
         public int NumberOfOperations { get; set; }
+
+        /// <summary>
+        /// Gets or sets the value of block minimum.
+        /// </summary>
+        /// <value>
+        /// The value of block minimum.
+        /// </value>
+        public int ValueOfBlockMin { get; set; }
+
+        /// <summary>
+        /// Gets or sets the value of block maximum.
+        /// </summary>
+        /// <value>
+        /// The value of block maximum.
+        /// </value>
+        public int ValueOfBlockMax { get; set; }
     }
 }

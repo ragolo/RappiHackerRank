@@ -21,7 +21,9 @@
             {
                 DimensionOfMatrix = ConfigurationManagerAppConfig.GetDimensionOfMatrix(),
                 TheNumberTestCase = ConfigurationManagerAppConfig.GetNumberTestCase(),
-                NumberOfOperations = ConfigurationManagerAppConfig.GetNumberOfOperations()
+                NumberOfOperations = ConfigurationManagerAppConfig.GetNumberOfOperations(),
+                ValueOfBlockMax = ConfigurationManagerAppConfig.GetValueOfBlockMax(),
+                ValueOfBlockMin = ConfigurationManagerAppConfig.GetValueOfBlockMin()
             };
             var settings = new CubeSummationConfigurationSettings()
             {

@@ -158,5 +158,20 @@
                     IsCoordinate1Position2LessOrEqualThanCoordinate2Position2(testCasesModel) &&
                     IsCoordinate1Position3LessOrEqualThanCoordinate2Position3(testCasesModel));
         }
+
+        /// <summary>
+        /// Determines whether [is value of block less equal to value of block maximum and greater than value of block minimum] [the specified test cases model].
+        /// </summary>
+        /// <param name="testCasesModel">The test cases model.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException">Operations</exception>
+        public bool IsValueOfBlockLessEqualToValueOfBlockMaxAndGreaterThanValueOfBlockMin(TestCasesModel testCasesModel)
+        {
+            if (testCasesModel.Operations == null)
+            {
+                throw new ArgumentNullException("Operations");
+            }
+            return (from operation in testCasesModel.Operations where operation.GetType() == typeof(UpdateBusiness) select (UpdateBusiness)operation into updateBusiness select updateBusiness.UpdateModels).All(querymodel => querymodel.ValueOfBlock >= ValidationModel.ValueOfBlockMin && querymodel.ValueOfBlock <= ValidationModel.ValueOfBlockMax);
+        }
     }
 }

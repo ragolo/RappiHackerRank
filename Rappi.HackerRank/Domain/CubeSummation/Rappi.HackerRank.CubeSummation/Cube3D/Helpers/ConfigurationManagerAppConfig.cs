@@ -1,10 +1,9 @@
-﻿using Rappi.HackerRank.CubeSummation.Cube3D.Exceptions;
-
-namespace Rappi.HackerRank.CubeSummation.Cube3D.Helpers
+﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Helpers
 {
     using System;
     using System.Configuration;
     using ConstAndEnumerations;
+    using Exceptions;
 
     /// <summary>
     /// Configuration Manager AppConfig
@@ -87,7 +86,7 @@ namespace Rappi.HackerRank.CubeSummation.Cube3D.Helpers
                 var numberOfOperations = ConfigurationManager.AppSettings[AppSettingsConstants.NumberOfOperations];
                 if (numberOfOperations == null)
                 {
-                    throw new CubeSummationException(AppSettingsConstants.NumberOfOperations);
+                    throw new ArgumentNullException(AppSettingsConstants.NumberOfOperations);
                 }
                 return Convert.ToInt32(numberOfOperations);
 
@@ -95,6 +94,54 @@ namespace Rappi.HackerRank.CubeSummation.Cube3D.Helpers
             catch (Exception ex)
             {
                 throw new CubeSummationException(CubeSummationExceptionType.AppSettings, "El numero de operaciones debe ser númerico validar por favor");
+            }
+        }
+
+        /// <summary>
+        /// Gets the value of block minimum.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="CubeSummationException">El valor del bloque debe ser númerico validar por favor</exception>
+        public static Int32 GetValueOfBlockMin()
+        {
+            try
+            {
+                var value = ConfigurationManager.AppSettings[AppSettingsConstants.ValueOfBlockMin];
+                if (value == null)
+                {
+                    throw new ArgumentNullException(AppSettingsConstants.ValueOfBlockMin);
+                }
+                return Convert.ToInt32(value);
+
+            }
+            catch (Exception ex)
+            {
+                throw new CubeSummationException(CubeSummationExceptionType.AppSettings, "El valor minimo del bloque debe ser númerico validar por favor");
+            }
+        }
+
+        /// <summary>
+        /// Gets the value of block maximum.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="CubeSummationException">El valor maximo del bloque debe ser númerico validar por favor</exception>
+        public static Int32 GetValueOfBlockMax()
+        {
+            try
+            {
+                var value = ConfigurationManager.AppSettings[AppSettingsConstants.ValueOfBlockMax];
+                if (value == null)
+                {
+                    throw new ArgumentNullException(AppSettingsConstants.ValueOfBlockMax);
+                }
+                return Convert.ToInt32(value);
+
+            }
+            catch (Exception ex)
+            {
+                throw new CubeSummationException(CubeSummationExceptionType.AppSettings, "El valor maximo del bloque debe ser númerico validar por favor");
             }
         }
     }

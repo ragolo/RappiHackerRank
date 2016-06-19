@@ -24,5 +24,20 @@
         /// The number of operations
         /// </summary>
         public const string NumberOfOperations = "NumberOfOperations";
+
+        /// <summary>
+        /// The value of block between range
+        /// </summary>
+        public const string ValueOfBlockBetweenRange = "ValueOfBlockBetweenRange";
+
+        /// <summary>
+        /// The value of block maximum
+        /// </summary>
+        public const string ValueOfBlockMax = "ValueOfBlockMax";
+
+        /// <summary>
+        /// The value of block minimum
+        /// </summary>
+        public const string ValueOfBlockMin = "ValueOfBlockMin";
     }
 }
