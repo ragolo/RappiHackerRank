@@ -40,22 +40,15 @@
         /// <summary>
         /// Determines whether [is coordinate1 position2 less or equal than coordinate2 position2] [the specified input format model].
         /// </summary>
-        /// <param name="inputFormatModel">The input format model.</param>
+        /// <param name="testCasesModel">The test cases model.</param>
         /// <returns></returns>
-        bool IsCoordinate1Position2LessOrEqualThanCoordinate2Position2(InputFormatModel inputFormatModel);
+        bool IsCoordinate1Position2LessOrEqualThanCoordinate2Position2(TestCasesModel testCasesModel);
 
         /// <summary>
         /// Determines whether [is coordinate1 position3 less or equal than coordinate2 position3] [the specified input format model].
         /// </summary>
-        /// <param name="inputFormatModel">The input format model.</param>
+        /// <param name="testCasesModel">The test cases model.</param>
         /// <returns></returns>
-        bool IsCoordinate1Position3LessOrEqualThanCoordinate2Position3(InputFormatModel inputFormatModel);
-
-        /// <summary>
-        /// Determines whether [is all validate].
-        /// </summary>
-        /// <param name="inputFormatModel">The input format model.</param>
-        /// <returns></returns>
-        bool IsAllValidate(InputFormatModel inputFormatModel);
+        bool IsCoordinate1Position3LessOrEqualThanCoordinate2Position3(TestCasesModel testCasesModel);
     }
 }

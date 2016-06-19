@@ -76,6 +76,31 @@ namespace Rappi.HackerRank.CubeSummation.Tests.CubeSummation.Cube3D
             Assert.True(generateInputFormatValidation.IsCoordinate1Position1LessOrEqualThanCoordinate2Position1(testCase));
         }
 
+        [Test]
+        public void GiveCoordinate1Position2LessOrEqualThanCoordinate2Position2()
+        {
+            var testCase = new TestCasesModel { DimensionOfMatrix = 2 };
+            var queryModelList = new List<QueryModel>();
+            var query1Model = new QueryModel
+            {
+                Coordinate1 = new CoordinateModel { Position2 = 1 },
+                Coordinate2 = new CoordinateModel { Position2 = 2 }
+            };
+
+            var query2Model = new QueryModel
+            {
+                Coordinate1 = new CoordinateModel { Position2 = 2 },
+                Coordinate2 = new CoordinateModel { Position2 = 2 }
+            };
+
+            queryModelList.Add(query1Model);
+            queryModelList.Add(query2Model);
+
+            BuildNumberOfOperations(queryModelList, testCase);
+
+            Assert.True(generateInputFormatValidation.IsCoordinate1Position2LessOrEqualThanCoordinate2Position2(testCase));
+        }
+
         /// <summary>
         /// Builds the number of operations.
         /// </summary>

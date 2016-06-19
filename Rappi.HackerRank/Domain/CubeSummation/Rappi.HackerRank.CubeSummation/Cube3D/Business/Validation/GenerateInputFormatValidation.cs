@@ -110,19 +110,25 @@
             return (from operation in testCasesModel.Operations where operation.GetType() == typeof(QueryBusiness) select (QueryBusiness)operation into queryBusiness select queryBusiness.QueryModels).All(querymodel => querymodel.Coordinate1.Position1 >= 1 && querymodel.Coordinate1.Position1 <= querymodel.Coordinate2.Position1 && querymodel.Coordinate2.Position1 <= testCasesModel.DimensionOfMatrix);
         }
 
-        public bool IsCoordinate1Position2LessOrEqualThanCoordinate2Position2(InputFormatModel inputFormatModel)
+        /// <summary>
+        /// Determines whether [is coordinate1 position2 less or equal than coordinate2 position2] [the specified test cases model].
+        /// </summary>
+        /// <param name="testCasesModel">The test cases model.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException">Operations</exception>
+        public bool IsCoordinate1Position2LessOrEqualThanCoordinate2Position2(TestCasesModel testCasesModel)
         {
-            throw new NotImplementedException();
+            if (testCasesModel.Operations == null)
+            {
+                throw new ArgumentNullException("Operations");
+            }
+
+            return (from operation in testCasesModel.Operations where operation.GetType() == typeof(QueryBusiness) select (QueryBusiness)operation into queryBusiness select queryBusiness.QueryModels).All(querymodel => querymodel.Coordinate1.Position2 >= 1 && querymodel.Coordinate1.Position2 <= querymodel.Coordinate2.Position2 && querymodel.Coordinate2.Position2 <= testCasesModel.DimensionOfMatrix);
         }
 
-        public bool IsCoordinate1Position3LessOrEqualThanCoordinate2Position3(InputFormatModel inputFormatModel)
+        public bool IsCoordinate1Position3LessOrEqualThanCoordinate2Position3(TestCasesModel testCasesModel)
         {
             throw new NotImplementedException();
-        }
-
-        public bool IsAllValidate(InputFormatModel inputFormatModel)
-        {
-            return IsTheNumberDimensionOfMatrixBetweenRange(inputFormatModel.TestCases);
         }
     }
 }

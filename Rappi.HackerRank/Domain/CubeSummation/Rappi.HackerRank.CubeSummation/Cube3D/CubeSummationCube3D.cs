@@ -50,8 +50,6 @@ namespace Rappi.HackerRank.CubeSummation.Cube3D
             try
             {
                 var result = new List<int>();
-                if (generateInputFormatValidation.IsAllValidate(inputFormatModel))
-                {
                     foreach (var testCase in inputFormatModel.TestCases)
                     {
                         cube3D = generateCube.GetCube3D(testCase.DimensionOfMatrix);
@@ -65,7 +63,6 @@ namespace Rappi.HackerRank.CubeSummation.Cube3D
                             }
                         }
                     }
-                }
                 return result;
             }
             catch (CubeSummationException ex)
