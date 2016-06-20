@@ -1,4 +1,6 @@
-﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Business
+﻿using Rappi.HackerRank.CubeSummation.Cube3D.Business.Validation;
+
+namespace Rappi.HackerRank.CubeSummation.Cube3D.Business
 {
     using System;
     using ConstAndEnumerations;
@@ -98,7 +100,7 @@
 
                     if (lines[currentPositionOfOperation].StartsWith(InputFormatConstAndEnum.OperatonUpdateStartWith))
                     {
-                        var updateBusiness = new UpdateBusiness
+                        var updateBusiness = new UpdateBusiness(new UpdateBusinessValidation(), new ValidationModel())
                         {
                             UpdateModels = GetUpdateModelsToOperationModel(lines, currentPositionOfOperation)
                         };
@@ -107,7 +109,7 @@
                     else
                         if (lines[currentPositionOfOperation].StartsWith(InputFormatConstAndEnum.OperationQueryStartWith))
                         {
-                            var queryBusiness = new QueryBusiness
+                            var queryBusiness = new QueryBusiness(new QueryBusinessValidation())
                             {
                                 QueryModels = GetQueryModelsToOperationModel(lines, currentPositionOfOperation)
                             };

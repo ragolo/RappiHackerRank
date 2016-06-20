@@ -14,20 +14,13 @@
         /// <summary>
         /// The query business validation
         /// </summary>
-        private readonly QueryBusinessValidation queryBusinessValidation;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QueryBusiness"/> class.
-        /// </summary>
-        public QueryBusiness()
-        {
-        }
+        private readonly IQueryBusinessValidation queryBusinessValidation;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryBusiness" /> class.
         /// </summary>
         /// <param name="queryBusinessValidation">The query business validation.</param>
-        public QueryBusiness(QueryBusinessValidation queryBusinessValidation)
+        public QueryBusiness(IQueryBusinessValidation queryBusinessValidation)
         {
             this.queryBusinessValidation = queryBusinessValidation;
         }

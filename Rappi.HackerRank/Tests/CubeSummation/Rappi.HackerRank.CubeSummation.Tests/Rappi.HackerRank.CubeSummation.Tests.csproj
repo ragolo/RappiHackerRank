@@ -65,6 +65,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CubeSummation\Cube3D\Business\CubeSummationCube3DTests.cs" />
     <Compile Include="CubeSummation\Cube3D\Cube3DBaseTests.cs" />
     <Compile Include="CubeSummation\Cube3D\Business\GenerateInputFormatTests.cs" />
     <Compile Include="CubeSummation\Cube3D\Business\Validation\UpdateBusinessValidationTests.cs" />

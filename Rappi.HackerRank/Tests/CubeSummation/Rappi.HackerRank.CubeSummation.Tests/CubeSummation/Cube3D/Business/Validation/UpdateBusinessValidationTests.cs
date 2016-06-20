@@ -65,7 +65,7 @@
             testCase.Operations = new IOperation[testCase.NumberOfOperations];
             for (var i = 0; i < testCase.NumberOfOperations; i++)
             {
-                var updateBusiness = new UpdateBusiness { UpdateModels = updateModelList[i] };
+                var updateBusiness = new UpdateBusiness(updateBusinessValidation, new ValidationModel()) { UpdateModels = updateModelList[i] };
                 testCase.Operations[i] = updateBusiness;
             }
         }

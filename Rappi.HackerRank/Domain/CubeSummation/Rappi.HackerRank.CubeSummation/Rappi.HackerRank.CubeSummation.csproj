@@ -65,6 +65,7 @@
     <Compile Include="Cube3D\Business\CubeSummationCube3D.cs" />
     <Compile Include="Cube3D\Exceptions\CubeSummationException.cs" />
     <Compile Include="Cube3D\Business\GenerateInputFormatFromText.cs" />
+    <Compile Include="Cube3D\Helpers\CubeSummationCube3DHelpers.cs" />
     <Compile Include="Cube3D\Helpers\FileText.cs" />
     <Compile Include="Cube3D\Helpers\ConfigurationManagerAppConfig.cs" />
     <Compile Include="Cube3D\Interfaces\ICubeSummationCube3D.cs" />

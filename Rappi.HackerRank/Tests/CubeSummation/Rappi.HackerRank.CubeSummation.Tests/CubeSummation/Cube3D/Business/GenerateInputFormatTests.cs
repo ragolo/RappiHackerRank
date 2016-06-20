@@ -44,7 +44,7 @@
         {
             var operations = new IOperation[2];
             var validationModel = new ValidationModel { NumberOfOperations = 1000 };
-            operations[0] = new QueryBusiness
+            operations[0] = new QueryBusiness(this.queryBusinessValidation)
             {
                 QueryModels =
                     new QueryModel
@@ -54,7 +54,7 @@
                     }
             };
 
-            Assert.IsTrue(generateInputFormatValidation.IsTheNumberOfOperationsBetweenRange(operations, validationModel));
+            Assert.IsTrue(this.generateInputFormatValidation.IsTheNumberOfOperationsBetweenRange(operations, validationModel));
         }
 
         [TearDown]

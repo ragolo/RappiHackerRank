@@ -21,12 +21,12 @@
         /// </summary>
         private readonly ValidationModel validationModel;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateBusiness"/> class.
-        /// </summary>
-        public UpdateBusiness()
-        {
-        }
+        ///// <summary>
+        ///// Initializes a new instance of the <see cref="UpdateBusiness"/> class.
+        ///// </summary>
+        //public UpdateBusiness()
+        //{
+        //}
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateBusiness" /> class.

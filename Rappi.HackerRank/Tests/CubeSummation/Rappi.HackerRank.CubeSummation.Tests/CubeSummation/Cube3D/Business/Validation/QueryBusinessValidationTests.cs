@@ -123,7 +123,7 @@
             testCase.Operations = new IOperation[testCase.NumberOfOperations];
             for (var i = 0; i < testCase.NumberOfOperations; i++)
             {
-                var queryBusiness = new QueryBusiness { QueryModels = queryModelList[i] };
+                var queryBusiness = new QueryBusiness(this.queryBusinessValidation) { QueryModels = queryModelList[i] };
                 testCase.Operations[i] = queryBusiness;
             }
         }

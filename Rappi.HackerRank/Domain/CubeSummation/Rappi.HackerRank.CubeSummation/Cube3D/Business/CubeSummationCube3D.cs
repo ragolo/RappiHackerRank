@@ -66,13 +66,13 @@
 
                 foreach (var testCase in inputFormatModel.TestCases)
                 {
-                    if (this.generateInputFormatValidation.IsTheNumberDimensionOfMatrixBetweenRange(testCase, this.validationModel))
+                    if (!this.generateInputFormatValidation.IsTheNumberDimensionOfMatrixBetweenRange(testCase, this.validationModel))
                     {
                         throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, string.Format("El número de la dimension de la matrix no pueder se mayor a {0}", this.validationModel.DimensionOfMatrix));
                     }
                     cube3D = generateCube.GetCube3D(testCase.DimensionOfMatrix);
 
-                    if (this.generateInputFormatValidation.IsTheNumberOfOperationsBetweenRange(testCase.Operations, this.validationModel))
+                    if (!this.generateInputFormatValidation.IsTheNumberOfOperationsBetweenRange(testCase.Operations, this.validationModel))
                     {
                         throw new CubeSummationException(CubeSummationExceptionType.ValidationModel, string.Format("El número de operaciones por casos de prueba no pueder se superior a {0}", this.validationModel.NumberOfOperations));
                     }
