@@ -35,6 +35,9 @@
                     } else {
                         alert("This browser doesn't support HTML5 file uploads!");
                     }
+                } else {
+                    self.error('Por favor seleccione un archivo a procesar');
+                    $('#modalError').modal({ keyboard: false });
                 }
             };
 
