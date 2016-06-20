@@ -29,13 +29,17 @@
                                 });
                             })
                             .fail(function (error) {
+                                //TODO:Esto se mejora llevandolo a una clase de utilidades y un metodo mostrar error
                                 self.error(error);
                                 $('#modalError').modal({ keyboard: false });
                             });
                     } else {
-                        alert("This browser doesn't support HTML5 file uploads!");
+                        //TODO:Esto se mejora llevandolo a una clase de utilidades y un metodo mostrar error
+                        self.error("Este navegador no soporta HTML5 para subir archivos");
+                        $('#modalError').modal({ keyboard: false });
                     }
                 } else {
+                    //TODO:Esto se mejora llevandolo a una clase de utilidades y un metodo mostrar error
                     self.error('Por favor seleccione un archivo a procesar');
                     $('#modalError').modal({ keyboard: false });
                 }
