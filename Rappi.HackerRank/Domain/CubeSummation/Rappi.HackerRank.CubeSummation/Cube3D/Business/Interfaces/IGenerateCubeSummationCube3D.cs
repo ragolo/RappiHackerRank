@@ -1,4 +1,4 @@
-﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Interfaces
+﻿namespace Rappi.HackerRank.CubeSummation.Cube3D.Business.Interfaces
 {
     using System.Collections.Generic;
     using Models.Input;
@@ -6,7 +6,7 @@
     /// <summary>
     /// 
     /// </summary>
-    public interface ICubeSummationCube3D
+    public interface IGenerateCubeSummationCube3D
     {
         List<int> GetSumTotalOfEachQueryOperation(InputFormatModel inputFormatModel);
     }

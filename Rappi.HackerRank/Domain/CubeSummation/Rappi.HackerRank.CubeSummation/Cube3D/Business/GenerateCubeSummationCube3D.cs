@@ -5,15 +5,14 @@
     using Interfaces;
     using ConstAndEnumerations;
     using Exceptions;
-    using Cube3D.Interfaces;
     using Models;
     using Models.Input;
 
     /// <summary>
     /// Cube Summation Cube3D
     /// </summary>
-    /// <seealso cref="Rappi.HackerRank.CubeSummation.Cube3D.Interfaces.ICubeSummationCube3D" />
-    public class CubeSummationCube3D : ICubeSummationCube3D
+    /// <seealso cref="IGenerateCubeSummationCube3D" />
+    public class GenerateCubeSummationCube3D : IGenerateCubeSummationCube3D
     {
         /// <summary>
         /// The generate input format validation
@@ -36,12 +35,12 @@
         private int[, ,] cube3D;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CubeSummationCube3D" /> class.
+        /// Initializes a new instance of the <see cref="GenerateCubeSummationCube3D" /> class.
         /// </summary>
         /// <param name="generateInputFormatValidation">The generate input format validation.</param>
         /// <param name="generateCube">The generate cube.</param>
         /// <param name="validationModel">The validation model.</param>
-        public CubeSummationCube3D(IGenerateInputFormatValidation generateInputFormatValidation, IGenerateCube generateCube, ValidationModel validationModel)
+        public GenerateCubeSummationCube3D(IGenerateInputFormatValidation generateInputFormatValidation, IGenerateCube generateCube, ValidationModel validationModel)
         {
             this.generateInputFormatValidation = generateInputFormatValidation;
             this.generateCube = generateCube;

@@ -4,8 +4,9 @@
     using Core.IoC;
     using HackerRank.CubeSummation.Cube3D.Business;
     using HackerRank.CubeSummation.Cube3D.Business.Interfaces;
-    using HackerRank.CubeSummation.Cube3D.Interfaces;
     using HackerRank.CubeSummation.Cube3D.Business.Validation;
+    using HackerRank.CubeSummation.Cube3D.Interfaces.Requests;
+    using HackerRank.CubeSummation.Cube3D.Requests;
     using NUnit.Framework;
 
     /// <summary>
@@ -22,7 +23,7 @@
         /// <summary>
         /// The cube summation cube3 d
         /// </summary>
-        protected ICubeSummationCube3D cubeSummationCube3D;
+        protected IGenerateCubeSummationCube3D cubeSummationCube3D;
 
         /// <summary>
         /// The generate cube
@@ -45,6 +46,11 @@
         protected IUpdateBusinessValidation updateBusinessValidation;
 
         /// <summary>
+        /// The cube summation cube3 d request
+        /// </summary>
+        protected ICubeSummationCube3DRequest cubeSummationCube3DRequest;
+
+        /// <summary>
         /// Sets up.
         /// </summary>
         [SetUp]
@@ -54,11 +60,12 @@
             {
                 var container = IocHelper.GetInstance();
                 this.generateInputFormat = (IGenerateInputFormat)container.Resolve("GenerateInputFormatFromText", typeof(GenerateInputFormatFromText));
-                this.cubeSummationCube3D = (ICubeSummationCube3D)container.Resolve("CubeSummationCube3D", typeof(CubeSummationCube3D));
+                this.cubeSummationCube3D = (IGenerateCubeSummationCube3D)container.Resolve("GenerateCubeSummationCube3D", typeof(GenerateCubeSummationCube3D));
                 this.generateCube = (IGenerateCube)container.Resolve("GenerateCube", typeof(GenerateCube));
                 this.generateInputFormatValidation = (IGenerateInputFormatValidation)container.Resolve("GenerateInputFormatValidation", typeof(GenerateInputFormatValidation));
-                this.updateBusinessValidation =(IUpdateBusinessValidation)container.Resolve("UpdateBusinessValidation", typeof (UpdateBusinessValidation));
+                this.updateBusinessValidation = (IUpdateBusinessValidation)container.Resolve("UpdateBusinessValidation", typeof(UpdateBusinessValidation));
                 this.queryBusinessValidation = (IQueryBusinessValidation)container.Resolve("QueryBusinessValidation", typeof(QueryBusinessValidation));
+                this.cubeSummationCube3DRequest = (ICubeSummationCube3DRequest)container.Resolve("CubeSummationCube3DRequest", typeof(CubeSummationCube3DRequest));
             }
             catch (Exception exception)
             {

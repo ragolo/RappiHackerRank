@@ -62,23 +62,26 @@
     <Compile Include="Cube3D\ConstAndEnumerations\CubeSummationCube3DConstAndEnum.cs" />
     <Compile Include="Cube3D\ConstAndEnumerations\CubeSummationExceptionType.cs" />
     <Compile Include="Cube3D\ConstAndEnumerations\InputFormatConstAndEnum.cs" />
-    <Compile Include="Cube3D\Business\CubeSummationCube3D.cs" />
+    <Compile Include="Cube3D\Business\GenerateCubeSummationCube3D.cs" />
     <Compile Include="Cube3D\Exceptions\CubeSummationException.cs" />
     <Compile Include="Cube3D\Business\GenerateInputFormatFromText.cs" />
     <Compile Include="Cube3D\Helpers\CubeSummationCube3DHelpers.cs" />
     <Compile Include="Cube3D\Helpers\FileText.cs" />
     <Compile Include="Cube3D\Helpers\ConfigurationManagerAppConfig.cs" />
-    <Compile Include="Cube3D\Interfaces\ICubeSummationCube3D.cs" />
+    <Compile Include="Cube3D\Business\Interfaces\IGenerateCubeSummationCube3D.cs" />
     <Compile Include="Cube3D\Business\Interfaces\IGenerateInputFormat.cs" />
     <Compile Include="Cube3D\Business\Interfaces\IGenerateInputFormatValidation.cs" />
     <Compile Include="Cube3D\Business\Interfaces\IOperation.cs" />
+    <Compile Include="Cube3D\Interfaces\Requests\ICubeSummationCube3DRequest.cs" />
     <Compile Include="Cube3D\Models\CoordinateModel.cs" />
     <Compile Include="Cube3D\Models\Input\InputFormatModel.cs" />
     <Compile Include="Cube3D\Models\Input\Operations\QueryModel.cs" />
     <Compile Include="Cube3D\Models\Input\Operations\UpdateModel.cs" />
     <Compile Include="Cube3D\Models\Input\TestCasesModel.cs" />
     <Compile Include="Cube3D\Business\Validation\GenerateInputFormatValidation.cs" />
+    <Compile Include="Cube3D\Models\Responses\CubeSummationCube3DResponses.cs" />
     <Compile Include="Cube3D\Models\ValidationModel.cs" />
+    <Compile Include="Cube3D\Requests\CubeSummationCube3DRequest.cs" />
     <Compile Include="Installer\CubeSummationConfigurationSettings.cs" />
     <Compile Include="Installer\ProcessSettingsFactory.cs" />
     <Compile Include="Installer\WindsorInstaller.cs" />
@@ -87,8 +90,6 @@
   <ItemGroup>
     <Folder Include="Cube2D\" />
     <Folder Include="Cube3D\Config\" />
-    <Folder Include="Cube3D\Requests\" />
-    <Folder Include="Cube3D\Responses\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

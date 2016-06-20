@@ -3,6 +3,8 @@ using Rappi.HackerRank.CubeSummation.Cube3D.Business;
 using Rappi.HackerRank.CubeSummation.Cube3D.Business.Interfaces;
 using Rappi.HackerRank.CubeSummation.Cube3D.Business.Operations;
 using Rappi.HackerRank.CubeSummation.Cube3D.Business.Validation;
+using Rappi.HackerRank.CubeSummation.Cube3D.Interfaces.Requests;
+using Rappi.HackerRank.CubeSummation.Cube3D.Requests;
 
 namespace Rappi.HackerRank.CubeSummation.Installer
 {
@@ -11,7 +13,6 @@ namespace Rappi.HackerRank.CubeSummation.Installer
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
     using Cube3D;
-    using Cube3D.Interfaces;
 
     /// <summary>
     /// Windsor Installer
@@ -60,9 +61,15 @@ namespace Rappi.HackerRank.CubeSummation.Installer
 
             var dependenciesCubeSummationCube3D = new List<Dependency>
             {
-                Dependency.OnValue("generateInputFormatValidation",cubeSummationConfigurationSettings.GenerateInputFormatValidation),
+                Dependency.OnValue("generateInputFormat",cubeSummationConfigurationSettings.GenerateInputFormatValidation),
                 Dependency.OnValue("generateCube",cubeSummationConfigurationSettings.GenerateCube),
                 Dependency.OnValue("validationModel",cubeSummationConfigurationSettings.ValidationModel)
+            };
+
+            var dependenciesCubeSummationCube3DRequest = new List<Dependency>
+            {
+                Dependency.OnValue("generateInputFormat",cubeSummationConfigurationSettings.GenerateInputFormat),
+                Dependency.OnValue("generateCubeSummationCube3D",cubeSummationConfigurationSettings.GenerateCubeSummationCube3D)
             };
 
             baseContainer.Register(
@@ -88,15 +95,17 @@ namespace Rappi.HackerRank.CubeSummation.Installer
                     .ImplementedBy<UpdateBusiness>()
                     .DependsOn(dependenciesUpdateBusiness.ToArray())
                     .Named("UpdateBusiness").LifeStyle.Is(defaultLifeStyleType),
-                    Component.For<ICubeSummationCube3D>()
-                    .ImplementedBy<CubeSummationCube3D>()
+                    Component.For<IGenerateCubeSummationCube3D>()
+                    .ImplementedBy<GenerateCubeSummationCube3D>()
                     .DependsOn(dependenciesCubeSummationCube3D.ToArray())
-                    .Named("CubeSummationCube3D").LifeStyle.Is(defaultLifeStyleType),
+                    .Named("GenerateCubeSummationCube3D").LifeStyle.Is(defaultLifeStyleType),
                     Component.For<IGenerateCube>()
                     .ImplementedBy<GenerateCube>()
-                    .Named("GenerateCube").LifeStyle.Is(defaultLifeStyleType)
-
-
+                    .Named("GenerateCube").LifeStyle.Is(defaultLifeStyleType),
+                    Component.For<ICubeSummationCube3DRequest>()
+                    .ImplementedBy<CubeSummationCube3DRequest>()
+                    .DependsOn(dependenciesCubeSummationCube3DRequest.ToArray())
+                    .Named("CubeSummationCube3DRequest").LifeStyle.Is(defaultLifeStyleType)
                 );
         }
     }

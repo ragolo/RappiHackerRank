@@ -56,5 +56,21 @@
         /// The validation model.
         /// </value>
         public ValidationModel ValidationModel { get; set; }
+
+        /// <summary>
+        /// Gets or sets the generate input format.
+        /// </summary>
+        /// <value>
+        /// The generate input format.
+        /// </value>
+        public GenerateInputFormatFromText GenerateInputFormat { get; set; }
+
+        /// <summary>
+        /// Gets or sets the generate cube summation cube3 d.
+        /// </summary>
+        /// <value>
+        /// The generate cube summation cube3 d.
+        /// </value>
+        public GenerateCubeSummationCube3D GenerateCubeSummationCube3D { get; set; }
     }
 }

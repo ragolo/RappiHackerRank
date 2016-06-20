@@ -24,7 +24,9 @@
                 GenerateInputFormatValidation = new GenerateInputFormatValidation(),
                 QueryBusinessValidation = new QueryBusinessValidation(),
                 UpdateBusinessValidation = new UpdateBusinessValidation(),
-                GenerateCube = new GenerateCube()
+                GenerateCube = new GenerateCube(),
+                GenerateInputFormat = new GenerateInputFormatFromText(ConfigurationManagerAppConfig.GetPathFile()),
+                GenerateCubeSummationCube3D = new GenerateCubeSummationCube3D(new GenerateInputFormatValidation(), new GenerateCube(), CubeSummationCube3DHelpers.GetValidationModel())
             };
 
             return settings;
