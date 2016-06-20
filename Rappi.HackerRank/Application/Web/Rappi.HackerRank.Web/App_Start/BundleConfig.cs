@@ -23,6 +23,10 @@ namespace Rappi.HackerRank.Web
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/Scripts/App")
+                .IncludeDirectory("~/Scripts/App", "*.js", true)
+                     );
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));

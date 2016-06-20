@@ -35,12 +35,14 @@
         /// <summary>
         /// Gets the sum total of cube 3D.
         /// </summary>
-        public CubeSummationCube3DResponses GetSumTotalOfCube3D()
+        /// <param name="manualPathFile">The manual path file.</param>
+        /// <returns></returns>
+        public CubeSummationCube3DResponses GetSumTotalOfCube3D(string manualPathFile="")
         {
             var cubeSummationCube3DResponses = new CubeSummationCube3DResponses();
             try
             {
-                var inputFormat = this.generateInputFormat.GetInputFormat();
+                var inputFormat = this.generateInputFormat.GetInputFormat(manualPathFile);
                 cubeSummationCube3DResponses.Result = this.generateCubeSummationCube3D.GetSumTotalOfEachQueryOperation(inputFormat);
             }
             catch (CubeSummationException ex)

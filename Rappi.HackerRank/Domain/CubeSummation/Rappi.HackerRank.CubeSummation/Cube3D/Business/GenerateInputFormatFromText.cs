@@ -32,10 +32,11 @@
         /// <summary>
         /// Gets the input format.
         /// </summary>
+        /// <param name="manualPathFile">The manual path file.</param>
         /// <returns></returns>
-        public InputFormatModel GetInputFormat()
+        public InputFormatModel GetInputFormat(string manualPathFile= "")
         {
-            var lines = FileText.GetAllLinesOfFile(pathFile);
+            var lines = FileText.GetAllLinesOfFile(manualPathFile== String.Empty? pathFile: manualPathFile);
             var inputFormatModel = new InputFormatModel();
 
             SetNumberOfTestCase(inputFormatModel, lines);

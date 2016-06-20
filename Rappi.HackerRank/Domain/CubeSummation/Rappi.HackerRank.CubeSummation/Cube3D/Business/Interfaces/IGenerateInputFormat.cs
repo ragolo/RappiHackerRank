@@ -10,7 +10,8 @@
         /// <summary>
         /// Gets the input format.
         /// </summary>
+        /// <param name="manualPathFile">The manual path file.</param>
         /// <returns></returns>
-        InputFormatModel GetInputFormat();
+        InputFormatModel GetInputFormat(string manualPathFile = "");
     }
 }
